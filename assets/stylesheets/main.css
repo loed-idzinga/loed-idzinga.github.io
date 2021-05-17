@@ -1,3 +1,6 @@
+---
+---
+
 @import 'vendor/normalize.css';
 @import 'vendor/bulma.css';
 
@@ -11,7 +14,7 @@
 }
 
 .motor-background {
-    background-image: url("https://www.loedidzinga.nl/assets/loed.jpg");
+    background-image: url("{{ site.baseurl }}/assets/images/motorcycle.png");
     background-color: #fff;
     background-position: center;
     background-repeat: no-repeat;
