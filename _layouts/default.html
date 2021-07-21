@@ -4,46 +4,7 @@
     {% include head.html %}
 	</head>
 
-	<body class="background">
-    <!-- Header -->
-    <section class="hero is-small pt-6 pb-6 is-info is-flex">
-      <!-- Hero content: will be in the middle -->
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <figure class="image box p-0 is-horizontal-center mb-6 is-128x128">
-            <img src="https://www.loedidzinga.nl/assets/loed.jpg">
-          </figure>
-
-          <h1 class="title">Loed Idzinga</h1>
-          <h2 class="subtitle">
-            Enthusiastic Ruby developer
-          </h2>
-
-          <a href="https://github.com/loed-idzinga" target="_blank" rel="noopener noreferrer" class="button is-white is-outlined">Github</a>
-          <a href="https://www.linkedin.com/in/loedidzinga/" target="_blank" rel="noopener noreferrer" class="button is-white is-outlined">LinkedIn</a>
-        </div>
-      </div>
-    </section>
-    
-    <div class="container mt-6 mb-6 p-2 fade-in">
-      <div class="block">{{content}}</div>
-    </div>
-
-    <section class="section is-medium motor-background has-text-centered">
-      <p class="title">What defines me?</p>
-      <p class="subtitle">
-        A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading.
-      </p>
-    </section>
-
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <p>
-          <strong>Loed Idzinga</strong> - Ruby developer - 
-          <a href="https://github.com/loed-idzinga/" target="_blank" rel="noopener noreferrer">Github</a> - 
-          <a href="https://www.linkedin.com/in/loedidzinga/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </p>
-      </div>
-    </footer>
+	<body>
+    {{content}}
 	</body>
 </html>
