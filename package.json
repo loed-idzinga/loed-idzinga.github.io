@@ -1,14 +1,10 @@
 {
   "dependencies": {
-    "postcss": "^8.2.14"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.5",
-    "postcss-cli": "^8.3.1",
-    "postcss-nested": "^5.0.5"
+    "autoprefixer": "^10.2.5"
   },
   "scripts": {
-    "start": "bundle exec jekyll serve",
-    "postcss": "postcss --use autoprefixer -o main.css css/*.css"
+    "start": "bundle exec jekyll serve"
   }
 }
