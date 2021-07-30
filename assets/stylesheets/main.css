@@ -1,85 +1,284 @@
 ---
 ---
+/*! minireset.css */
+blockquote,body,dd,dl,dt,fieldset,figure,h1,h2,h3,h4,h5,h6,hr,html,iframe,legend,li,ol,p,pre,textarea,ul{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}img,video{height:auto;max-width:100%}html{background-color:#fff;font-size:16px;min-width:300px;overflow-x:hidden;overflow-y:scroll;text-rendering:optimizeLegibility;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%}article,aside,figure,footer,header,hgroup,section{display:block}body{color:#4a4a4a;font-size:1em;font-weight:400;line-height:1.5}a{color:#485fc7;cursor:pointer;text-decoration:none}a strong{color:currentColor}a:hover{color:#363636}hr{background-color:#f5f5f5;border:none;display:block;height:2px;margin:1.5rem 0}img{height:auto;max-width:100%}small{font-size:.875em}span{font-style:inherit;font-weight:inherit}strong{color:#363636;font-weight:700}
 
-@import 'vendor/bulma.css';
+/* ------------
+  1. Site Styling
+    1.1 - General
+    1.2 - Split the screen
+    1.3 - Flexbox
+    1.4 - Typography
+    1.5 - Profile image
+    1.6 - Button styling
+    1.7 - Page content elements
+    1.8 - Media queries
+    1.9 - Animations
+    1.10 - Keyframes
+    1.11 - Animation triggers
+    1.12 - Delays 
+*/
 
-html,
+
+/* 1.1 General */
 body {
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 16px;
+  color: #4a4a4a;
+  line-height: 1.6;
 }
 
+.content h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.content h2 {
+  font-size: 1.8em;
+  margin-bottom: 0.4em;
+  font-weight: 500;
+}
+
+.content p:not(.content p.icon) {
+  margin-bottom: 1.6em;
+}
+
+/* 1.2 Split the screen */
 .main-container {
   display: flex;
   width: 100%;
   min-height: 100vh;
-  min-width:600px; 
 }
+
 .left-container {
-  flex: 0 1 60%;
+  flex: 0 1 100%;
   min-height: 100%;
-  max-width: 60%;
+  max-width: 100%;
 }
 
 .right-container {
-  flex: 0 1 40%;
   min-height: 100vh;
-  max-width: 40%;
-  background-image: url('../images/motor.jpg');
+  display: none;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
+/* 1.3 Flexbox */
 .flex-container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: stretch;
   align-items: center;
   align-content: stretch;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.flex-container.space-around {
+  justify-content: space-around;
 }
 
 .flex-item {
   display: block;
   flex-grow: 0;
   flex-shrink: 1;
-  flex-basis: auto;
-  align-self: auto;
+  align-self: stretch;
   order: 0;
 }
 
+.flex-item {
+  margin-bottom: 1rem;
+}
+
+.flex-item.has-text-centered {
+  text-align: center;
+}
+
+.flex-item.card {
+  width: 100%;
+}
+
+/* 1.4 Typography */
+.title, .subtitle {
+  word-break: break-word;
+}
+
+.title {
+  color: #4a4a4a;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.125;
+}
+
+.subtitle {
+  color: #d3d3d3;
+  font-size: 1.25rem;
+  font-weight: 200;
+  line-height: 1.25;
+  margin-top: -1.25rem;
+}
+
+/* 1.5 Profile image */
+.content figure {
+  margin-right: 2em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+.image {
+  display: block;
+  position: relative;
+  height: 128px;
+  width: 128px;
+}
+
+.image img {
+  display: block;
+  height: auto;
+  width: 100%;
+  border-radius: 64px;
+  height: 128px;
+  width: 128px;
+}
+
+/* 1.6 Button styling */
+.btn {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  display: inline-block;
+  font-weight: 400;
+  color: #fff;
+  vertical-align: middle;
+  user-select: none;
+  background-color: #3e8ed0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 1.25rem;
+  height: 2.5em;
+  cursor: pointer;
+  box-shadow: none;
+  padding: .4em 1em .5em 1em;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: #3488ce;
+}
+
+.btn:focus, .btn:active {
+  outline: none;
+}
+
+.btn.is-green {
+  background-color: #00d1b2;
+  color: #fff;
+}
+
+.btn.is-green:hover {
+  background-color: #00c4a7;
+  color: #fff;
+}
+
+.buttons {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.buttons .btn {
+  margin-bottom: 0.5rem;
+}
+
+.buttons .btn:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+/* 1.7 Page content elements */
 .content {
   padding: 4rem;
 }
 
-.tile.is-child {
-  min-width: 5vw;
+.box {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  color: #4a4a4a;
+  display: block;
+  padding: 1.25rem;
+  width: 100%;
+  height: 100%;
 }
 
-.image {
-  background-position: center center;
-  background-size: cover;
+.box h3 {
+  font-size: 1.25rem;
 }
 
-#left {
-  padding: 7%;
-  width: 50vw;
+.box a {
+  color: #3e8ed0;
 }
 
-#right {
-  background-image: url('https://www.loedidzinga.nl/assets/loed.jpg');
+.box a:hover, .box a:focus, .box a:active {
+  color: #3488ce;
+  text-decoration: underline;
 }
 
-.columns {
-  margin-top: 0;
+.box ul {
+  margin-top: 1em;
+  margin-left: 0;
 }
 
-.name,
-.hr,
-.job,
-.description,
-.button {
+.box li {
+  list-style-type: none;
+}
+
+.box li::before {
+    content: "⦿";
+    color: #3e8ed0;
+    padding-right: 10px;
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.icon-text {
+
+}
+
+/* 1.8 Media queries */
+@media (min-width: 600px) {
+  .left-container {
+    flex: 0 1 70%;
+    max-width: 70%;
+  }
+
+  .right-container {
+    display: inline;
+    flex: 0 1 30%;
+    max-width: 30%;
+    background-image: url('../images/motor.jpg');
+  }
+
+  .flex-container {
+    flex-direction: row;
+  }
+
+  .flex-item.card {
+    text-align: left;
+    max-width: 400px;
+    margin-right: .5em;
+  }
+}
+
+/* 1.9 Animations */
+.name, .hr, .job, .description, .btn {
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
   animation-fill-mode: both;
@@ -91,35 +290,12 @@ body {
   content: '';
   height: 3px;
   margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: .5rem;
   transform-origin: center left;
   width: 4rem;
 }
 
-#right {
-  width: 100%;
-  height: 100%;
-}
-
-#right {
-  background-position: center center;
-  background-size: cover;
-  height: 400px;
-  position: relative;
-}
-
-@media (min-width: 769px) {
-  #right {
-    height: 100vh;
-    width: 50vw;
-    position: fixed;
-    right: 0;
-    top: 0;
-  }
-}
-
-/* Keyframes */
-
+/* 1.10 Keyframes */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -151,14 +327,12 @@ body {
   }
 }
 
-/* Animation triggers */
-
+/* 1.11 Animation triggers */
 .name {
   animation-name: slideDown;
 }
 
-.job,
-.description {
+.job, .description {
   animation-name: slideUp;
 }
 
@@ -166,13 +340,13 @@ body {
   animation-name: fillUp;
 }
 
-.button {
+.btn {
   animation-duration: 500ms;
   animation-name: slideUp;
   animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
 }
 
-/* Delays */
+/* 1.12 Delays */
 .name {
   animation-delay: 100ms;
 }
@@ -189,18 +363,14 @@ body {
   animation-delay: 400ms;
 }
 
-.buttons .button:nth-child(1) {
+.buttons .btn:nth-child(1) {
   animation-delay: 800ms;
 }
 
-.buttons .button:nth-child(2) {
+.buttons .btn:nth-child(2) {
   animation-delay: 900ms;
 }
 
-.buttons .button:nth-child(3) {
+.buttons .btn:nth-child(3) {
   animation-delay: 1s;
-}
-
-.buttons .button:nth-child(4) {
-  animation-delay: 1.1s;
 }
