@@ -1,2 +1,3 @@
 # loed-idzinga.github.io
-Loedidzinga.nl
+
+My personal website with soem contact details on it.
