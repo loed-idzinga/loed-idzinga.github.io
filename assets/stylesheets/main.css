@@ -131,17 +131,17 @@ body {
 .image {
   display: block;
   position: relative;
-  height: 128px;
-  width: 128px;
+  height: 160px;
+  width: 160px;
 }
 
 .image img {
   display: block;
   height: auto;
   width: 100%;
-  border-radius: 64px;
-  height: 128px;
-  width: 128px;
+  border-radius: 80px;
+  height: 160px;
+  width: 160px;
 }
 
 /* 1.6 Button styling */
@@ -264,6 +264,14 @@ body {
 
   .flex-container {
     flex-direction: row;
+  }
+
+  .flex-container.aligned {
+    justify-content: flex-start;
+  }
+
+  .flex-container.aligned .flex-item {
+    align-self: center;
   }
 
   .flex-item.card {
