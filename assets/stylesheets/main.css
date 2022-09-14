@@ -175,12 +175,12 @@ body {
 }
 
 .btn.is-green {
-  background-color: #00d1b2;
+  background-color: #4cd137;
   color: #fff;
 }
 
 .btn.is-green:hover {
-  background-color: #00c4a7;
+  background-color: #44bd32;
   color: #fff;
 }
 
