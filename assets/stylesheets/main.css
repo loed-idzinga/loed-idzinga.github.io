@@ -1,5 +1,24 @@
 ---
-blockquote,body,dd,dl,dt,fieldset,figure,h1,h2,h3,h4,h5,h6,hr,html,iframe,legend,li,ol,p,pre,textarea,ul{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}img,video{height:auto;max-width:100%}html{background-color:#fff;font-size:16px;min-width:300px;overflow-x:hidden;overflow-y:scroll;text-rendering:optimizeLegibility;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%}article,aside,figure,footer,header,hgroup,section{display:block}body{color:#4a4a4a;font-size:1em;font-weight:400;line-height:1.5}a{color:#485fc7;cursor:pointer;text-decoration:none}a strong{color:currentColor}a:hover{color:#363636}hr{background-color:#f5f5f5;border:none;display:block;height:2px;margin:1.5rem 0}img{height:auto;max-width:100%}small{font-size:.875em}span{font-style:inherit;font-weight:inherit}strong{color:#363636;font-weight:700}
+blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html, iframe, legend, li, ol, p, pre, textarea, ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: 400;
+}
+
+ul, .content p:not(.content p.icon) {
+  list-style: none;
+  margin-bottom: 1.6em;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
 
 body {
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
@@ -146,6 +165,8 @@ body {
   padding: .4em 1em .5em 1em;
 }
 
+
+
 .btn:hover {
   color: #fff;
   background-color: #3488ce;
@@ -175,6 +196,7 @@ body {
 .buttons .btn {
   margin-bottom: 0.5rem;
 }
+
 
 .buttons .btn:not(:last-child) {
   margin-right: 0.5rem;
@@ -207,7 +229,7 @@ body {
 
 .box a:hover, .box a:focus, .box a:active {
   color: #3488ce;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .box ul {
