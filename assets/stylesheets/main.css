@@ -1,5 +1,4 @@
 ---
----
 blockquote,body,dd,dl,dt,fieldset,figure,h1,h2,h3,h4,h5,h6,hr,html,iframe,legend,li,ol,p,pre,textarea,ul{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}img,video{height:auto;max-width:100%}html{background-color:#fff;font-size:16px;min-width:300px;overflow-x:hidden;overflow-y:scroll;text-rendering:optimizeLegibility;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%}article,aside,figure,footer,header,hgroup,section{display:block}body{color:#4a4a4a;font-size:1em;font-weight:400;line-height:1.5}a{color:#485fc7;cursor:pointer;text-decoration:none}a strong{color:currentColor}a:hover{color:#363636}hr{background-color:#f5f5f5;border:none;display:block;height:2px;margin:1.5rem 0}img{height:auto;max-width:100%}small{font-size:.875em}span{font-style:inherit;font-weight:inherit}strong{color:#363636;font-weight:700}
 
 body {
@@ -113,17 +112,17 @@ body {
 .image {
   display: block;
   position: relative;
-  height: 160px;
-  width: 160px;
+  height: 200px;
+  width: 200px;
 }
 
 .image img {
   display: block;
   height: auto;
   width: 100%;
-  border-radius: 80px;
-  height: 160px;
-  width: 160px;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
 }
 
 /* 1.6 Button styling */
@@ -232,17 +231,18 @@ body {
 }
 
 /* 1.8 Media queries */
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   .left-container {
-    flex: 0 1 70%;
-    max-width: 70%;
+    flex: 0 1 80%;
+    max-width: 80%;
   }
 
   .right-container {
     display: inline;
-    flex: 0 1 30%;
-    max-width: 30%;
+    flex: 0 1 20%;
+    max-width: 400px;
     background-image: url('../images/motor.jpg');
+    background-position: left;
   }
 
   .flex-container {
@@ -275,7 +275,7 @@ body {
   background-color: #3e8ed0;
   border: none;
   content: '';
-  height: 3px;
+  height: 6px;
   margin-bottom: 1.5rem;
   margin-top: .5rem;
   transform-origin: center left;
