@@ -197,9 +197,12 @@ body {
   margin-bottom: 0.5rem;
 }
 
-
 .buttons .btn:not(:last-child) {
   margin-right: 0.5rem;
+}
+
+.buttons .btn a {
+  text-decoration: none;
 }
 
 /* 1.7 Page content elements */
@@ -263,16 +266,10 @@ body {
     display: inline;
     flex: 0 1 20%;
     background-image: url('../images/motor.jpg');
-    background-size: cover;
-    background-position: center;
   }
 
   .flex-container {
     flex-direction: row;
-  }
-
-  .flex-container.aligned {
-    justify-content: flex-start;
   }
 
   .flex-container.aligned .flex-item {
