@@ -17,7 +17,7 @@
 
     <meta property="og:title" content="Loed Idzinga | Experienced Ruby Developer & Cybersecurity Enthusiast">
     <meta property="og:description" content="Passionate Ruby developer with years of experience in the field">
-    <meta property="og:image" content="https://www.loedidzinga.nl/assets/images/loed_profile_picture.png">
+    <meta property="og:image" content="https://www.loedidzinga.nl/images/loed_profile_picture.png">
     <meta property="og:url" content="https://www.loedidzinga.nl/">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -35,7 +35,7 @@
         "name": "Loed Idzinga",
         "jobTitle": "Ruby Developer & Cybersecurity Enthusiast",
         "url": "https://www.loedidzinga.nl",
-        "image": "https://www.loedidzinga.nl/assets/images/loed_profile_picture.png",
+        "image": "https://www.loedidzinga.nl/images/loed_profile_picture.png",
         "sameAs": [
           "https://www.linkedin.com/in/loedidzinga",
           "https://github.com/loed-idzinga"
@@ -130,7 +130,7 @@
       }
 
       .section {
-        padding: 60px 20px;
+        padding: 20px;
         max-width: 650px;
         margin: 0 auto;
       }
@@ -150,57 +150,51 @@
       .reference-card {
         color: #fff;
         display: flex;
-
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-
         flex-grow: 1;
-
         background: linear-gradient(135deg, var(--main-color), var(--secondary-color));
         padding: 20px;
         width: 260px;
         border-radius: 10px;
         transition: 0.3s;
-
         min-height: 4vh;
       }
 
       .reference-card.image {
         min-height: 16rem;
         text-transform: uppercase;
-
         background-size: cover;
         background-position: center;
-
         justify-content: flex-end;
       }
 
       .reference-card.image p {
-        background-color: var(--shadow-color);
+        background-color: var(--main-color);
         padding: 6px 12px;
       }
 
       .motor {
-        background-image: url("assets/images/motor.jpg");
+        background-image: url("images/motor.jpg");
       }
 
       .diving {
-        background-image: url("assets/images/diving.jpg");
+        background-image: url("images/diving.jpg");
       }
 
-      .fire {
-        background-image: url("assets/images/motor.jpg");
+      .fire_fighting {
+        background-image: url("images/fire_fighting.jpg");
       }
 
       .karate {
-        background-image: url("assets/images/motor.jpg");
+        background-image: url("images/karate.jpg");
       }
 
       .reference-card a {
           display: block;
 
-          color: #58a6ff;
+          color: var(--text-color);
           text-decoration: none;
           font-weight: bold;
           transition: 0.3s;
@@ -210,6 +204,7 @@
 
       .reference-card a:hover {
           color: #ffffff;
+          text-decoration: underline;
       }
 
       footer {
@@ -221,7 +216,7 @@
 </head>
 <body>
   <section class="hero">
-    <img src="assets/images/loed_profile_picture.png" alt="Loed Idzinga" class="avatar">
+    <img src="images/loed_profile_picture.png" alt="Loed Idzinga" class="avatar">
 
     <h1>Hi, I'm Loed Idzinga 👋</h1>
 
@@ -246,16 +241,12 @@
         <p>Diving</p>
       </div>
 
-      <div class="reference-card image motor">
+      <div class="reference-card image fire_fighting">
         <p>Fire fighting</p>
       </div>
 
-      <div class="reference-card image motor">
+      <div class="reference-card image karate">
         <p>Karate</p>
-      </div>
-
-      <div class="reference-card image motor">
-        <p>Developing</p>
       </div>
     </div>
   </section>
@@ -265,25 +256,25 @@
     <div class="references">
       <div class="reference-card">
         <h3>SEQT</h3>
-        <p>My own company focusing on innovative cybersecurity solutions for companies.</p>
-        <a href="https://seqt.nl" target="_blank">Visit SeqT</a>
+        <p>My own company focusing on innovative cybersecurity solutions for companies. Bringing awareness back</p>
+        <a href="https://seqt.nl" target="_blank" rel="noopener noreferrer">Visit SEQT</a>
       </div>
 
       <div class="reference-card">
         <h3>Booqable</h3>
         <p>Currently working as a developer at Booqable, enhancing rental experiences.</p>
-        <a href="https://booqable.com" target="_blank">Visit Booqable</a>
+        <a href="https://booqable.com" target="_blank" rel="noopener noreferrer">Visit Booqable</a>
       </div>
 
       <div class="reference-card">
         <h3>Nedap Healthcare</h3>
-        <p>Contributed to healthcare solutions at Nedap Healthcare.</p>
-        <a href="https://nedap-healthcare.com" target="_blank">Visit Nedap Healthcare</a>
+        <p>Contributed to software in healthcare solutions at Nedap Healthcare.</p>
+        <a href="https://nedap-healthcare.com" target="_blank" rel="noopener noreferrer">Visit Nedap Healthcare</a>
       </div>
 
       <div class="reference-card">
         <h3>Netventief</h3>
-        <p>Founded Netventief, a company dedicated to creative tech ventures.</p>
+        <p>Founded Netventief, a company that created fully customized and specialized websites for companies.</p>
       </div>
 
       <div class="reference-card">
@@ -298,7 +289,7 @@
 
     <p>Let's work together! Reach me at <a href="mailto:blobs.04.photic@icloud.com?subject=Hi! Let's connect">my e-mail address</a>.</p>
     <br/>
-    <p>Connect with me on <a href="https://www.linkedin.com" target="_blank" style="color: #58a6ff;">LinkedIn</a> and <a href="https://github.com" target="_blank" style="color: #58a6ff;">GitHub</a>.</p>
+    <p>Connect with me on <a href="https://www.linkedin.com/in/loedidzinga/" target="_blank" rel="noopener noreferrer">LinkedIn</a> and <a href="https://github.com/loed-idzinga" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
   </section>
 
   <footer>
