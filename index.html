@@ -54,6 +54,7 @@
         --secondary-color: #2d98da;
         --background-color: #ecf0f1;
         --text-color: #4a4a4a;
+        --shadow-color: rgba(0,0,0, .75);
       }
 
       * {
@@ -77,37 +78,40 @@
       }
 
       a {
-        color: #58a6ff;
+        color: var(--main-color);
+      }
+
+      a:hover {
+        color: var(--secondary-color);
       }
 
       .avatar {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
         border-radius: 50%;
         margin-bottom: 1.6rem;
         border: 4px solid #fff;
-        box-shadow: 0 0 100px rgba(#2c3e50, 1);
+        box-shadow: 0 0 200px var(--shadow-color);
       }
 
-        .hero {
-          height: 100vh;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          background: linear-gradient(135deg, var(--main-color), var(--secondary-color));
-          padding: 20px;
-        }
+      .hero {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, var(--main-color), var(--secondary-color));
+        padding: 20px;
+      }
 
-        .hero h1 {
-          font-size: 3rem;
-          margin-bottom: 10px;
-        }
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+      }
 
-        .hero p {
-          font-size: 1.2rem;
-          opacity: 0.8;
-        }
+      .hero p {
+        font-size: 1.2rem;
+      }
 
         .hero .cta {
           margin-top: 20px;
@@ -165,19 +169,32 @@
 
         .reference-card.image {
           min-height: 16rem;
-          line-height: 16rem;
-
           text-transform: uppercase;
 
           background-size: cover;
           background-position: center;
+
+          justify-content: flex-end;
         }
 
         .reference-card.image p {
-          /* background-color: #000; */
+          background-color: var(--shadow-color);
+          padding: 6px 12px;
         }
 
         .motor {
+          background-image: url("assets/images/motor.jpg");
+        }
+
+        .diving {
+          background-image: url("assets/images/diving.jpg");
+        }
+
+        .fire {
+          background-image: url("assets/images/motor.jpg");
+        }
+
+        .karate {
           background-image: url("assets/images/motor.jpg");
         }
 
@@ -205,7 +222,7 @@
 </head>
 <body>
   <section class="hero">
-    <img src="/assets/images/loed_profile_picture.png" alt="Loed Idzinga" class="avatar">
+    <img src="assets/images/loed_profile_picture.png" alt="Loed Idzinga" class="avatar">
 
     <h1>Hi, I'm Loed Idzinga 👋</h1>
 
@@ -226,7 +243,7 @@
         <p>Motorcycling</p>
       </div>
 
-      <div class="reference-card image motor">
+      <div class="reference-card image diving">
         <p>Diving</p>
       </div>
 
@@ -252,20 +269,24 @@
         <p>My own company focusing on innovative cybersecurity solutions for companies.</p>
         <a href="https://seqt.nl" target="_blank">Visit SeqT</a>
       </div>
+
       <div class="reference-card">
         <h3>Booqable</h3>
         <p>Currently working as a developer at Booqable, enhancing rental experiences.</p>
         <a href="https://booqable.com" target="_blank">Visit Booqable</a>
       </div>
+
       <div class="reference-card">
         <h3>Nedap Healthcare</h3>
         <p>Contributed to healthcare solutions at Nedap Healthcare.</p>
         <a href="https://nedap-healthcare.com" target="_blank">Visit Nedap Healthcare</a>
       </div>
+
       <div class="reference-card">
         <h3>Netventief</h3>
         <p>Founded Netventief, a company dedicated to creative tech ventures.</p>
       </div>
+
       <div class="reference-card">
         <h3>Noorderstorm</h3>
         <p>Collaborated on various projects with Noorderstorm.</p>
