@@ -1,91 +1,219 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loed Idzinga - Ruby Developer & Cybersecurity Enthusiast | Available for Projects 💎</title>
+    <meta content="Loed Idzinga is an experienced Ruby developer and cybersecurity enthusiast, passionate about building secure, high-quality web applications. Connect to explore his innovative solutions and expertise." name=description />
+    <meta content="Ruby, Ruby on Rails, Cybersecurity, Security Awereness, development, web-app, websites, site, webdevelopment, development, gelderland, Winterswijk, ruby on rails" name=keywords />
 
-<div class="main-container">
-  <div class="left-container">
-    <div class="content">
+    <meta content="index, follow" name=robots />
+    <meta content="index, follow" name=googlebot />
+    <meta content="30 days" name=revisit-after />
+    <meta content="Loed Idzinga" name=author />
+    <link rel="canonical" href="https://www.loedidzinga.nl/">
 
-      <div class="flex-container aligned">
-        <div class="flex-item">
-          <figure class="image">
-            <img src="../assets/images/loed_profile_picture.png" alt="Loed Idzinga - Ruby Developer & security enthousiast">
-          </figure>
-        </div>
+    <meta property="og:title" content="Loed Idzinga | Experienced Ruby Developer & Cybersecurity Enthusiast">
+    <meta property="og:description" content="Passionate Ruby developer with years of experience in the field">
+    <meta property="og:image" content="https://www.loedidzinga.nl/profile.jpg">
+    <meta property="og:url" content="https://www.loedidzinga.nl/">
 
-        <div class="flex-item">
-          <h1 class="title is-2 name">Hi, I'm Loed Idzinga</h1>
-          <h2 class="subtitle has-text-grey job">Experienced Ruby Developer & Cybersecurity Enthusiast</h2>
-          <hr class="hr" />
-        </div>
-      </div>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3e8ed0">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#ffffff">
 
-      <div class="has-text-grey description">
-        <p>
-          Programming is what I love doing every day! For me it’s a great privilege to work for Booqable.
-          I’m an Ruby & cybersecurity enthusiast and always willing to learn new stuff! It’s what's keeping my mind sharp.
-        </p>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Arial", sans-serif;
+            scroll-behavior: smooth;
+        }
 
-        <div class="flex-container">
-          <div class="flex-item card">
-            <article class="box">
-              <h3 class="title">I work(ed) for</h3>
-              <ul>
-                <li><a href="https://seqt.nl/" target="_blank" rel="noopener noreferrer"><strong>Seqt.nl</strong></a> (own company)</li>
-                <li><a href="https://booqable.com/" target="_blank" rel="noopener noreferrer"><strong>Booqable.com</strong></a> (current)</li>
-                <li><a href="https://nedap-healthcare.com/" target="_blank" rel="noopener noreferrer">Nedap Healthcare</a></li>
-                <li>Netventief (own company)</li>
-                <li>Noorderstorm</li>
-              </ul>
-            </article>
+        h1, h2, h3 {
+          margin: 1em 0;
+        }
+
+        body {
+            background-color: #f1f1f1;
+            color: #ffffff;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .hero .cta {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #58a6ff;
+            color: #0d1117;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .hero .cta:hover {
+            background: #ffffff;
+            color: #0d1117;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 20px;
+
+            max-width: 600px;
+            margin: 1em auto;
+        }
+
+        .references {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .reference-card {
+            background: #1e293b;
+            padding: 20px;
+            width: 260px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .reference-card.small {
+          width: 25%;
+          min-height: 10vh;
+        }
+
+        .reference-card:hover {
+            background: #58a6ff;
+        }
+
+        .reference-card a {
+            display: block;
+
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+
+            margin-top: 1em;
+        }
+
+        .reference-card a:hover {
+            color: #ffffff;
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px;
+            background: #1e293b;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>Hi, I'm Loed Idzinga 👋</h1>
+        <p>Experienced Ruby Developer & Cybersecurity Enthusiast</p>
+        <a href="#contact" class="cta">Contact</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Programming is what I love doing every day! For me, it's a great privilege to work for <a href="https://booqable.com" target="_blank">Booqable</a>. I'm a Ruby & cybersecurity enthusiast and always willing to learn new stuff! It's what's keeping my mind sharp.</p>
+
+        <h2>I ❤️</h2>
+        <div class="references">
+          <div class="reference-card small">
+            <p>Motorcycling</p>
           </div>
 
-          <div class="flex-item card">
-            <article class="box">
-              <h3 class="title">I ❤️</h3>
-              <div class="flex-container space-around">
-                <div class="flex-item has-text-centered">
-                  <div>
-                    <p class="icon">🏍</p>
-                    <p class="icon-text">Motorcycling</p>
-                  </div>
-                </div>
-                <div class="flex-item has-text-centered">
-                  <div>
-                    <p class="icon">🥋</p>
-                    <p class="icon-text">Karate</p>
-                  </div>
-                </div>
-                <div class="flex-item has-text-centered">
-                  <div>
-                    <p class="icon">🧑🏻‍💻</p>
-                    <p class="icon-text">Developing</p>
-                  </div>
-                </div>
-                <div class="flex-item has-text-centered">
-                  <div>
-                    <p class="icon">🤿</p>
-                    <p class="icon-text">Diving</p>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
+          <div class="reference-card small">
+            <h3>Diving</h3>
         </div>
 
-        <div class="buttons">
-          <a href="mailto:blobs.04.photic@icloud.com?subject=Hi! Just wanted to say.."
-            class="btn is-green">Mail</a>
-          <a href="https://www.linkedin.com/in/loedidzinga/" target="_blank" rel="noopener noreferrer"
-            class="btn">LinkedIn</a>
-          <a href="https://github.com/loed-idzinga" target="_blank" rel="noopener noreferrer"
-            class="btn">Github</a>
-        </div>
+        <div class="reference-card small">
+          <h3>Karate</h3>
       </div>
+
+      <div class="reference-card small">
+        <h3>Developing</h3>
     </div>
-  </div>
 
-  <div class="right-container">
-    <!-- Side image is here -->
-  </div>
-</div>
+          </div>
+
+    </section>
+
+    <!-- Work References Section -->
+    <section id="references" class="section">
+        <h2>Work References</h2>
+        <div class="references">
+            <div class="reference-card">
+                <h3>SeqT</h3>
+                <p>My own company focusing on innovative tech solutions.</p>
+                <a href="https://seqt.nl" target="_blank">Visit SeqT</a>
+            </div>
+            <div class="reference-card">
+                <h3>Booqable</h3>
+                <p>Currently working as a developer at Booqable, enhancing rental experiences.</p>
+                <a href="https://booqable.com" target="_blank">Visit Booqable</a>
+            </div>
+            <div class="reference-card">
+                <h3>Nedap Healthcare</h3>
+                <p>Contributed to healthcare solutions at Nedap Healthcare.</p>
+                <a href="https://nedap-healthcare.com" target="_blank">Visit Nedap Healthcare</a>
+            </div>
+            <div class="reference-card">
+                <h3>Netventief</h3>
+                <p>Founded Netventief, a company dedicated to creative tech ventures.</p>
+            </div>
+            <div class="reference-card">
+                <h3>Noorderstorm</h3>
+                <p>Collaborated on various projects with Noorderstorm.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <p>Let's work together! Reach me at <a href="mailto:youremail@example.com" style="color: #58a6ff;">youremail@example.com</a></p>
+        <p>Connect with me on <a href="https://www.linkedin.com" target="_blank" style="color: #58a6ff;">LinkedIn</a> and <a href="https://github.com" target="_blank" style="color: #58a6ff;">GitHub</a>.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Created by Loed Idzinga - 2025</p>
+    </footer>
+
+</body>
+</html>
