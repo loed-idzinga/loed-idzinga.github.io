@@ -113,111 +113,110 @@
         font-size: 1.2rem;
       }
 
-        .hero .cta {
-          margin-top: 20px;
-          padding: 12px 25px;
-          background: #fff;
-          color: #0d1117;
+      .hero .cta {
+        margin-top: 20px;
+        padding: 12px 24px;
+        background: #fff;
+        color: #0d1117;
+        text-decoration: none;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        transition: 0.3s;
+      }
+
+      .hero .cta:hover {
+        background: #0d1117;
+        color: #fff;
+      }
+
+      .section {
+        padding: 60px 20px;
+        max-width: 650px;
+        margin: 0 auto;
+      }
+
+      #about, #references, #contact {
+        color: var(--text-color);
+      }
+
+      .references {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-items: stretch;
+      }
+
+      .reference-card {
+        color: #fff;
+        display: flex;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        flex-grow: 1;
+
+        background: linear-gradient(135deg, var(--main-color), var(--secondary-color));
+        padding: 20px;
+        width: 260px;
+        border-radius: 10px;
+        transition: 0.3s;
+
+        min-height: 4vh;
+      }
+
+      .reference-card.image {
+        min-height: 16rem;
+        text-transform: uppercase;
+
+        background-size: cover;
+        background-position: center;
+
+        justify-content: flex-end;
+      }
+
+      .reference-card.image p {
+        background-color: var(--shadow-color);
+        padding: 6px 12px;
+      }
+
+      .motor {
+        background-image: url("assets/images/motor.jpg");
+      }
+
+      .diving {
+        background-image: url("assets/images/diving.jpg");
+      }
+
+      .fire {
+        background-image: url("assets/images/motor.jpg");
+      }
+
+      .karate {
+        background-image: url("assets/images/motor.jpg");
+      }
+
+      .reference-card a {
+          display: block;
+
+          color: #58a6ff;
           text-decoration: none;
-          font-size: 1.2rem;
-          border-radius: 5px;
-          transition: 0.3s;
-        }
-
-        .hero .cta:hover {
-          background: #0d1117;
-          color: #fff;
-        }
-
-        /* Sections */
-        .section {
-          padding: 60px 20px;
-          max-width: 650px;
-          margin: 0 auto;
-        }
-
-        #about, #references, #contact {
-          color: var(--text-color);
-        }
-
-        .references {
-          display: flex;
-          justify-content: center;
-          gap: 20px;
-          flex-wrap: wrap;
-          align-items: stretch;
-        }
-
-        .reference-card {
-          color: #fff;
-          display: flex;
-
-          flex-direction: column;
-          align-items: center;
-          justify-content: space-between;
-
-          flex-grow: 1;
-
-          background: linear-gradient(135deg, var(--main-color), var(--secondary-color));
-          padding: 20px;
-          width: 260px;
-          border-radius: 10px;
+          font-weight: bold;
           transition: 0.3s;
 
-          min-height: 4vh;
-        }
+          margin-top: 1em;
+      }
 
-        .reference-card.image {
-          min-height: 16rem;
-          text-transform: uppercase;
+      .reference-card a:hover {
+          color: #ffffff;
+      }
 
-          background-size: cover;
-          background-position: center;
-
-          justify-content: flex-end;
-        }
-
-        .reference-card.image p {
-          background-color: var(--shadow-color);
-          padding: 6px 12px;
-        }
-
-        .motor {
-          background-image: url("assets/images/motor.jpg");
-        }
-
-        .diving {
-          background-image: url("assets/images/diving.jpg");
-        }
-
-        .fire {
-          background-image: url("assets/images/motor.jpg");
-        }
-
-        .karate {
-          background-image: url("assets/images/motor.jpg");
-        }
-
-        .reference-card a {
-            display: block;
-
-            color: #58a6ff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-
-            margin-top: 1em;
-        }
-
-        .reference-card a:hover {
-            color: #ffffff;
-        }
-
-        footer {
-          color: var(--text-color);
-          padding: 20px;
-          margin-top: 40px;
-        }
+      footer {
+        color: var(--text-color);
+        padding: 20px;
+        margin-top: 40px;
+      }
     </style>
 </head>
 <body>
