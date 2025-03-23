@@ -1,0 +1,274 @@
+:root {
+  --main-color: #45aaf2;
+  --secondary-color: #2d98da;
+  --background-color: #ecf0f1;
+  --text-color: #4a4a4a;
+  --shadow-color: rgba(0,0,0, .75);
+  --transition-speed: 0.3s;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Typography */
+body {
+  background-color: var(--background-color);
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+  margin: 1em 0;
+}
+
+/* Links */
+a {
+  color: var(--main-color);
+  text-decoration: none;
+  transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Avatar */
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 1.6rem;
+  border: 4px solid #fff;
+  box-shadow: 0 0 200px var(--shadow-color);
+  object-fit: cover;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--main-color), var(--secondary-color));
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+              linear-gradient(-45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+              linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.1) 75%),
+              linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.1) 75%);
+  background-size: 20px 20px;
+  opacity: 0.1;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  position: relative;
+  z-index: 1;
+}
+
+/* CTA Button */
+.hero .cta {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #fff;
+  color: #0d1117;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: all var(--transition-speed) ease;
+  position: relative;
+  z-index: 1;
+}
+
+.hero .cta:hover {
+  background: #0d1117;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Section Styles */
+.section {
+  padding: 40px 20px;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+#about, #references, #contact {
+  color: var(--text-color);
+}
+
+/* References Grid */
+.references {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 2rem;
+}
+
+/* Reference Cards */
+.reference-card {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  background: linear-gradient(135deg, var(--main-color), var(--secondary-color));
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  min-height: 4vh;
+  width: 260px;
+}
+
+.reference-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.reference-card.image {
+  min-height: 16rem;
+  text-transform: uppercase;
+  background-size: cover;
+  background-position: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.reference-card.image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  border-radius: 10px;
+}
+
+.reference-card.image p {
+  background-color: var(--shadow-color);
+  padding: 6px 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Background Images */
+.motor {
+  background-image: url("images/motor.webp");
+}
+
+.diving {
+  background-image: url("images/diving.webp");
+}
+
+.fire_fighting {
+  background-image: url("images/fire_fighting.webp");
+}
+
+.karate {
+  background-image: url("images/karate.webp");
+}
+
+/* Reference Card Links */
+.reference-card a {
+  display: block;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color var(--transition-speed) ease;
+  margin-top: 1em;
+}
+
+.reference-card a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  color: var(--text-color);
+  padding: 20px;
+  margin-top: 40px;
+  position: relative;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 650px;
+  height: 1px;
+  background-color: rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section {
+    padding: 20px;
+  }
+
+  .references {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 40px 20px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    color: var(--text-color);
+  }
+
+  .hero {
+    background: none;
+    height: auto;
+    padding: 20px;
+  }
+
+  .hero::before {
+    display: none;
+  }
+
+  .reference-card {
+    break-inside: avoid;
+    border: 1px solid #ddd;
+  }
+}
