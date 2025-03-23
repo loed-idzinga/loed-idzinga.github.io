@@ -1,34 +1,68 @@
 :root {
+  /* Colors */
   --main-color: #45aaf2;
   --secondary-color: #2d98da;
   --background-color: #ecf0f1;
   --text-color: #4a4a4a;
   --shadow-color: rgba(0,0,0, .75);
+  --white: #ffffff;
+  --dark: #0d1117;
+
+  /* Gradients */
+  --hero-gradient: linear-gradient(-45deg, var(--main-color), #3a8fd9, #2d98da, #45aaf2);
+  --card-gradient: linear-gradient(135deg, var(--main-color), var(--secondary-color));
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.2);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.1);
+
+  /* Transitions */
   --transition-speed: 0.3s;
+  --transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Container */
+  --container-width: 650px;
+  --container-padding: 20px;
 }
 
 /* Reset and Base Styles */
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
-/* Typography */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   background-color: var(--background-color);
   text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 16px;
-  color: #ffffff;
+  color: var(--white);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
+/* Typography */
 h1, h2, h3 {
-  margin: 1em 0;
+  margin: var(--spacing-md) 0;
+  line-height: 1.2;
 }
 
 /* Links */
@@ -36,6 +70,7 @@ a {
   color: var(--main-color);
   text-decoration: none;
   transition: color var(--transition-speed) ease;
+  position: relative;
 }
 
 a:hover {
@@ -47,23 +82,36 @@ a:hover {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  margin-bottom: 1.6rem;
-  border: 4px solid #fff;
+  margin-bottom: var(--spacing-lg);
+  border: 4px solid var(--white);
   box-shadow: 0 0 200px var(--shadow-color);
   object-fit: cover;
+  transition: transform var(--transition-speed) var(--transition-bounce);
+}
+
+.avatar:hover {
+  transform: scale(1.05);
 }
 
 /* Hero Section */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--main-color), var(--secondary-color));
-  padding: 20px;
+  background: var(--hero-gradient);
+  background-size: 600% 600%;
+  padding: var(--container-padding);
   position: relative;
   overflow: hidden;
+  animation: gradientBG 30s ease-in-out infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .hero::before {
@@ -73,52 +121,62 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
-              linear-gradient(-45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
-              linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.1) 75%),
-              linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.1) 75%);
   background-size: 20px 20px;
-  opacity: 0.1;
+  opacity: 0.3;
+  animation: patternMove 40s linear infinite;
+}
+
+@keyframes patternMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
 }
 
 .hero h1 {
   font-size: clamp(2rem, 5vw, 3rem);
-  margin-bottom: 10px;
+  margin-bottom: var(--spacing-sm);
   position: relative;
   z-index: 1;
+  text-shadow: var(--shadow-sm);
 }
 
 .hero p {
   font-size: clamp(1rem, 2vw, 1.2rem);
   position: relative;
   z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* CTA Button */
 .hero .cta {
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: #fff;
-  color: #0d1117;
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--white);
+  color: var(--dark);
   text-decoration: none;
   font-size: 1.2rem;
   border-radius: 5px;
-  transition: all var(--transition-speed) ease;
+  transition: all var(--transition-speed) var(--transition-bounce);
   position: relative;
   z-index: 1;
+  box-shadow: var(--shadow-sm);
 }
 
 .hero .cta:hover {
-  background: #0d1117;
-  color: #fff;
+  background: var(--dark);
+  color: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: var(--shadow-md);
 }
 
 /* Section Styles */
 .section {
-  padding: 40px 20px;
-  max-width: 650px;
+  padding: var(--spacing-xl) var(--container-padding);
+  max-width: var(--container-width);
   margin: 0 auto;
 }
 
@@ -130,31 +188,32 @@ a:hover {
 .references {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  gap: var(--spacing-lg);
   justify-content: center;
   align-items: stretch;
-  margin-top: 2rem;
+  margin-top: var(--spacing-lg);
 }
 
 /* Reference Cards */
 .reference-card {
-  color: #fff;
+  color: var(--white);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
-  background: linear-gradient(135deg, var(--main-color), var(--secondary-color));
-  padding: 20px;
+  background: var(--card-gradient);
+  padding: var(--spacing-lg);
   border-radius: 10px;
-  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  transition: all var(--transition-speed) var(--transition-bounce);
   min-height: 4vh;
   width: 260px;
+  box-shadow: var(--shadow-sm);
 }
 
 .reference-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-lg);
 }
 
 .reference-card.image {
@@ -169,37 +228,24 @@ a:hover {
 .reference-card.image::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
   border-radius: 10px;
 }
 
 .reference-card.image p {
   background-color: var(--shadow-color);
-  padding: 6px 12px;
+  padding: var(--spacing-xs) var(--spacing-sm);
   position: relative;
   z-index: 1;
+  border-radius: 4px;
 }
 
 /* Background Images */
-.motor {
-  background-image: url("images/motor.webp");
-}
-
-.diving {
-  background-image: url("images/diving.webp");
-}
-
-.fire_fighting {
-  background-image: url("images/fire_fighting.webp");
-}
-
-.karate {
-  background-image: url("images/karate.webp");
-}
+.motor { background-image: url("images/motor.webp"); }
+.diving { background-image: url("images/diving.webp"); }
+.fire_fighting { background-image: url("images/fire_fighting.webp"); }
+.karate { background-image: url("images/karate.webp"); }
 
 /* Reference Card Links */
 .reference-card a {
@@ -208,19 +254,19 @@ a:hover {
   text-decoration: none;
   font-weight: bold;
   transition: color var(--transition-speed) ease;
-  margin-top: 1em;
+  margin-top: var(--spacing-md);
 }
 
 .reference-card a:hover {
-  color: #ffffff;
+  color: var(--white);
   text-decoration: underline;
 }
 
 /* Footer */
 footer {
   color: var(--text-color);
-  padding: 20px;
-  margin-top: 40px;
+  padding: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
   position: relative;
 }
 
@@ -231,7 +277,7 @@ footer::before {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 650px;
+  max-width: var(--container-width);
   height: 1px;
   background-color: rgba(0,0,0,0.1);
 }
@@ -239,36 +285,31 @@ footer::before {
 /* Responsive Design */
 @media (max-width: 768px) {
   .section {
-    padding: 20px;
+    padding: var(--spacing-lg) var(--container-padding);
   }
 
   .references {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
   }
 
   .hero {
-    padding: 40px 20px;
-  }
-}
-
-/* Print Styles */
-@media print {
-  body {
-    color: var(--text-color);
-  }
-
-  .hero {
-    background: none;
-    height: auto;
-    padding: 20px;
-  }
-
-  .hero::before {
-    display: none;
+    padding: var(--spacing-xl) var(--container-padding);
   }
 
   .reference-card {
-    break-inside: avoid;
-    border: 1px solid #ddd;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
