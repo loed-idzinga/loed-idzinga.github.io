@@ -2,7 +2,7 @@
   /* Colors */
   --main-color: #45aaf2;
   --secondary-color: #2d98da;
-  --background-color: #ecf0f1;
+  --background-color: #ffffff;
   --text-color: #4a4a4a;
   --shadow-color: rgba(0,0,0, .75);
   --white: #ffffff;
@@ -11,6 +11,7 @@
   /* Gradients */
   --hero-gradient: linear-gradient(-45deg, var(--main-color), #3a8fd9, #2d98da, #45aaf2);
   --card-gradient: linear-gradient(135deg, var(--main-color), var(--secondary-color));
+  --card-current-gradient: linear-gradient(135deg, #2ecc71, #27ae60);
 
   /* Shadows */
   --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
@@ -29,7 +30,7 @@
   --spacing-xl: 3rem;
 
   /* Container */
-  --container-width: 650px;
+  --container-width: 800px;
   --container-padding: 20px;
 }
 
@@ -86,11 +87,12 @@ a:hover {
   border: 4px solid var(--white);
   box-shadow: 0 0 200px var(--shadow-color);
   object-fit: cover;
+  z-index: 10;
   transition: transform var(--transition-speed) var(--transition-bounce);
 }
 
 .avatar:hover {
-  transform: scale(1.05);
+  transform: scale(1.5);
 }
 
 .hero {
@@ -104,34 +106,39 @@ a:hover {
   padding: var(--container-padding);
   position: relative;
   overflow: hidden;
-  animation: gradientBG 30s ease-in-out infinite;
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(circle at 50% 40%, #000 0 45%, transparent 70%);
+  opacity: .8;
+  animation: gridMove 16s linear infinite;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: 20px 20px;
-  opacity: 0.3;
-  animation: patternMove 40s linear infinite;
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  background: radial-gradient(circle at 40% 30%, rgba(120,100,255,.28), transparent 55%),
+              radial-gradient(circle at 70% 70%, rgba(0,220,255,.18), transparent 60%);
+  filter: blur(40px);
+  animation: glowDrift 22s ease-in-out infinite alternate;
 }
 
-@keyframes patternMove {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 40px 40px;
-  }
+@keyframes gridMove{
+  from { transform: translate(0,0); }
+  to   { transform: translate(-60px,-60px); }
+}
+
+@keyframes glowDrift{
+  0%   { transform: translate(-3%, -2%) scale(1.02); }
+  100% { transform: translate( 3%,  2%) scale(1.08); }
 }
 
 .hero h1 {
@@ -206,13 +213,12 @@ a:hover {
   transition: all var(--transition-speed) var(--transition-bounce);
   min-height: 4vh;
   width: 100%;
-  box-shadow: var(--shadow-sm);
 }
 
 .reference-card h3 {
   padding: var(--spacing-xs) var(--spacing-sm);
   margin-top: 0;
-  color: var(--text-color);
+  color: var(--white);
 }
 
 .reference-card.image {
@@ -228,7 +234,7 @@ a:hover {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  background: linear-gradient(to top, rgba(255,255,255,0.3), transparent);
   border-radius: 10px;
 }
 
@@ -247,19 +253,25 @@ a:hover {
 
 .reference-card a {
   display: block;
-  color: var(--text-color);
+  color: var(--white);
   text-decoration: none;
   font-weight: bold;
   transition: color var(--transition-speed) ease;
   margin-top: var(--spacing-md);
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--white);
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: 4px;
 }
 
 .reference-card a:hover {
+  background: var(--dark);
+  border: 1px solid var(--dark);
   color: var(--white);
-  border: 1px solid var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.reference-card.current {
+  background: var(--card-current-gradient);
 }
 
 footer {
