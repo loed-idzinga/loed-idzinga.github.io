@@ -20,17 +20,17 @@
       --muted: #66645e;
       --border: #e7e1d6;
       --border-strong: #dbd3c6;
-      --accent: #78bea0;
-      --accent-strong: #4f9d7d;
-      --accent-soft: rgba(120, 190, 160, 0.12);
-      --tag-current-bg: rgba(120, 190, 160, 0.14);
-      --tag-current-text: #4f9d7d;
+      --accent: #1f6b4f;
+      --accent-strong: #174f3b;
+      --accent-soft: rgba(31, 107, 79, 0.12);
+      --tag-current-bg: rgba(31, 107, 79, 0.14);
+      --tag-current-text: #174f3b;
       --tag-founder-bg: rgba(181, 87, 87, 0.12);
       --tag-founder-text: #a14b4b;
       --tag-previous-bg: rgba(122, 118, 110, 0.12);
       --tag-previous-text: #6f6a63;
-      --tag-default-bg: rgba(120, 190, 160, 0.12);
-      --tag-default-text: #4f9d7d;
+      --tag-default-bg: rgba(31, 107, 79, 0.12);
+      --tag-default-text: #174f3b;
       --shadow: 0 22px 60px rgba(23, 23, 23, 0.06);
       --shadow-soft: 0 10px 28px rgba(23, 23, 23, 0.04);
       --radius-xl: 30px;
@@ -177,7 +177,12 @@
     .button {
       background: var(--accent);
       color: #fff;
-      box-shadow: 0 12px 28px rgba(120, 190, 160, 0.22);
+      box-shadow: 0 12px 28px rgba(31, 107, 79, 0.18);
+    }
+
+    .button:hover {
+      background: var(--accent-strong);
+      box-shadow: 0 16px 32px rgba(31, 107, 79, 0.22);
     }
 
     .button-secondary {
@@ -185,7 +190,6 @@
       background: rgba(255, 255, 255, 0.88);
     }
 
-    .button:hover,
     .button-secondary:hover,
     .card:hover,
     .contact-panel:hover {
