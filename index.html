@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Loed Idzinga — Ruby Developer & Secure Product Engineer</title>
-  <meta name="description" content="Loed Idzinga is a Ruby developer focused on secure, reliable web applications, product engineering, and thoughtful digital experiences." />
+  <meta name="description" content="Loed Idzinga is a Ruby developer building secure, joyful, high-quality web applications with Ruby on Rails and a thoughtful product mindset." />
   <meta name="theme-color" content="#f8f7f4" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,14 +14,15 @@
     :root {
       --bg: #f8f7f4;
       --surface: #ffffff;
-      --surface-soft: #f3efe7;
-      --surface-alt: #f7f4ee;
+      --surface-soft: #f4f3ea;
+      --surface-alt: #fbf8f1;
       --text: #171717;
       --muted: #66645e;
-      --border: #e7e2d8;
+      --border: #e8e2d7;
       --border-strong: #ddd6ca;
-      --accent: #1f6b4f;
-      --accent-strong: #174f3b;
+      --accent: #58b28c;
+      --accent-strong: #2d8a68;
+      --accent-soft: rgba(88, 178, 140, 0.12);
       --shadow: 0 24px 70px rgba(23, 23, 23, 0.08);
       --shadow-soft: 0 10px 30px rgba(23, 23, 23, 0.05);
       --radius-xl: 34px;
@@ -37,7 +38,8 @@
       margin: 0;
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.9), transparent 35%),
+        radial-gradient(circle at top left, rgba(255,255,255,0.95), transparent 35%),
+        radial-gradient(circle at 90% 10%, rgba(88, 178, 140, 0.08), transparent 20%),
         linear-gradient(180deg, #fcfbf8 0%, var(--bg) 100%);
       color: var(--text);
       line-height: 1.6;
@@ -87,12 +89,12 @@
     }
 
     .hero {
-      padding: 6rem 0 4.5rem;
+      padding: 5.5rem 0 4.75rem;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+      grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.6fr);
       gap: 3rem;
       align-items: center;
     }
@@ -105,7 +107,7 @@
       padding: 0.55rem 0.95rem;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.86);
       color: var(--accent-strong);
       font-size: 0.9rem;
       font-weight: 600;
@@ -119,9 +121,9 @@
     }
 
     h1 {
-      font-size: clamp(3.4rem, 8vw, 6rem);
+      font-size: clamp(3.2rem, 7vw, 5.6rem);
       margin-top: 1.15rem;
-      max-width: 8ch;
+      max-width: 8.5ch;
     }
 
     .hero-copy p,
@@ -134,7 +136,7 @@
     }
 
     .hero-copy p {
-      max-width: 34ch;
+      max-width: 36ch;
       font-size: 1.08rem;
       margin: 1.25rem 0 0;
     }
@@ -163,18 +165,18 @@
       padding: 0.98rem 1.3rem;
       border-radius: 999px;
       font-weight: 600;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
 
     .button {
       background: var(--accent);
       color: #fff;
-      box-shadow: 0 14px 34px rgba(31, 107, 79, 0.18);
+      box-shadow: 0 14px 34px rgba(88, 178, 140, 0.28);
     }
 
     .button-secondary {
       border: 1px solid var(--border-strong);
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.84);
     }
 
     .button:hover,
@@ -191,36 +193,26 @@
     .company-card,
     .about-panel,
     .contact-panel {
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.84);
       border: 1px solid var(--border);
       box-shadow: var(--shadow-soft);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .hero-card {
-      border-radius: var(--radius-xl);
-      padding: 1.25rem;
+      border-radius: 999px;
+      padding: 0.9rem;
+      max-width: 290px;
+      margin-left: auto;
       box-shadow: var(--shadow);
+      background: linear-gradient(180deg, #ffffff 0%, #f7f4ee 100%);
     }
 
     .hero-photo {
-      position: relative;
-      border-radius: 26px;
+      border-radius: 999px;
       overflow: hidden;
-      aspect-ratio: 4 / 5;
+      aspect-ratio: 1 / 1.15;
       background: linear-gradient(180deg, #ebe6db 0%, #f9f8f4 100%);
-    }
-
-    .hero-photo::after {
-      content: "";
-      position: absolute;
-      inset: auto 1rem 1rem auto;
-      width: 72px;
-      height: 72px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.35);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.45);
     }
 
     .hero-photo img {
@@ -236,7 +228,7 @@
     .section-label {
       font-size: 0.8rem;
       font-weight: 700;
-      color: var(--accent);
+      color: var(--accent-strong);
       text-transform: uppercase;
       letter-spacing: 0.12em;
       margin-bottom: 0.85rem;
@@ -244,12 +236,12 @@
     }
 
     .section-heading {
-      font-size: clamp(2.2rem, 4vw, 3.25rem);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
       margin-bottom: 1rem;
     }
 
     .section-intro {
-      max-width: 40ch;
+      max-width: 42ch;
       margin: 0 0 2rem;
     }
 
@@ -260,7 +252,8 @@
     }
 
     .about-panel {
-      max-width: 720px;
+      max-width: 760px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(251,248,241,0.95));
     }
 
     .company-grid,
@@ -271,10 +264,7 @@
       gap: 1.25rem;
     }
 
-    .expertise-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
+    .expertise-grid,
     .company-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -300,7 +290,7 @@
       margin-bottom: 0.9rem;
       padding: 0.35rem 0.7rem;
       border-radius: 999px;
-      background: var(--surface-soft);
+      background: var(--accent-soft);
       color: var(--accent-strong);
       font-size: 0.78rem;
       font-weight: 700;
@@ -313,7 +303,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      background: linear-gradient(180deg, #ffffff 0%, #faf8f3 100%);
+      background: linear-gradient(180deg, #ffffff 0%, #fbf8f1 100%);
       position: relative;
       overflow: hidden;
     }
@@ -321,12 +311,24 @@
     .expertise-card::before {
       content: "";
       position: absolute;
-      top: -20px;
-      right: -20px;
-      width: 120px;
-      height: 120px;
-      border-radius: 32px;
-      background: rgba(31, 107, 79, 0.06);
+      top: -26px;
+      right: -26px;
+      width: 130px;
+      height: 130px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+    }
+
+    .expertise-card::after {
+      content: "";
+      position: absolute;
+      bottom: 22px;
+      right: 22px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.35;
     }
 
     .expertise-card > * {
@@ -340,7 +342,7 @@
     }
 
     .expertise-card p {
-      max-width: 24ch;
+      max-width: 25ch;
       margin: 0;
       font-size: 1rem;
     }
@@ -354,18 +356,35 @@
     }
 
     .interest-card {
-      min-height: 160px;
+      min-height: 170px;
       display: flex;
       align-items: flex-end;
-      background: linear-gradient(180deg, #f8f5ee 0%, #ffffff 100%);
+      background: linear-gradient(180deg, #faf7f0 0%, #ffffff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .interest-card::before {
+      content: "";
+      position: absolute;
+      inset: 18px auto auto 18px;
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+    }
+
+    .interest-card h3 {
+      position: relative;
+      z-index: 1;
     }
 
     .contact-panel {
-      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(242,239,232,0.95));
+      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,244,236,0.98));
     }
 
     .contact-note {
-      max-width: 28ch;
+      max-width: 30ch;
       margin: 0;
     }
 
@@ -385,6 +404,11 @@
 
       .hero {
         padding-top: 4rem;
+      }
+
+      .hero-card {
+        margin: 0;
+        max-width: 240px;
       }
 
       h1 {
@@ -430,11 +454,11 @@
         <div class="hero-grid">
           <div class="hero-copy">
             <span class="eyebrow">Ruby Developer · Secure Web Applications</span>
-            <h1 id="hero-title">Simple, secure, reliable.</h1>
-            <p>I build Ruby on Rails applications with a strong focus on quality and security.</p>
+            <h1 id="hero-title">Building with care, clarity, and joy.</h1>
+            <p>I create Ruby on Rails applications that feel reliable, thoughtful, and a pleasure to use.</p>
             <div class="hero-actions">
-              <a class="button" href="#contact">Contact me</a>
-              <a class="button-secondary" href="#experience">See work</a>
+              <a class="button" href="#contact">Let’s connect</a>
+              <a class="button-secondary" href="#experience">View experience</a>
             </div>
             <div class="hero-pills" aria-label="Key topics">
               <span class="mini-pill">Winterswijk</span>
@@ -453,52 +477,52 @@
 
       <section id="about" aria-labelledby="about-title">
         <span class="section-label">About</span>
-        <h2 class="section-heading" id="about-title">A calm approach to building good software.</h2>
+        <h2 class="section-heading" id="about-title">Thoughtful software, built with a positive mindset.</h2>
         <div class="about-panel">
-          <p class="section-intro">Clear, maintainable, and secure by design.</p>
+          <p class="section-intro">I love building digital products that are clear, maintainable, and secure — with equal care for the code and the people using it.</p>
         </div>
       </section>
 
       <section id="expertise" aria-labelledby="expertise-title">
         <span class="section-label">Expertise</span>
-        <h2 class="section-heading" id="expertise-title">What I do.</h2>
-        <p class="section-intro">A few areas I care deeply about.</p>
+        <h2 class="section-heading" id="expertise-title">What I bring.</h2>
+        <p class="section-intro">A blend of craftsmanship, practicality, and security-minded thinking.</p>
         <div class="expertise-grid">
           <article class="card expertise-card">
             <div>
               <span class="card-kicker">01</span>
               <h3>Ruby on Rails</h3>
             </div>
-            <p>Clean applications that stay maintainable.</p>
+            <p>Well-structured applications that stay enjoyable to build and easy to maintain.</p>
           </article>
           <article class="card expertise-card">
             <div>
               <span class="card-kicker">02</span>
               <h3>Cybersecurity</h3>
             </div>
-            <p>Practical security without unnecessary complexity.</p>
+            <p>Security built in from the start, in a way that stays practical and human.</p>
           </article>
           <article class="card expertise-card">
             <div>
               <span class="card-kicker">03</span>
               <h3>APIs & Integrations</h3>
             </div>
-            <p>Reliable systems that connect well together.</p>
+            <p>Reliable connections between systems, designed to work smoothly and last well.</p>
           </article>
           <article class="card expertise-card">
             <div>
               <span class="card-kicker">04</span>
               <h3>Product Engineering</h3>
             </div>
-            <p>Thoughtful decisions with attention to quality.</p>
+            <p>Thoughtful technical decisions that support quality, clarity, and steady progress.</p>
           </article>
         </div>
       </section>
 
       <section id="experience" aria-labelledby="experience-title">
         <span class="section-label">Experience</span>
-        <h2 class="section-heading" id="experience-title">Selected work.</h2>
-        <p class="section-intro">A few companies and projects I’ve worked with.</p>
+        <h2 class="section-heading" id="experience-title">Places I’ve enjoyed building for.</h2>
+        <p class="section-intro">A few teams, products, and companies that have been part of the journey.</p>
         <div class="company-grid">
           <article class="company-card">
             <span class="card-kicker">Current</span>
@@ -525,7 +549,7 @@
 
       <section id="interests" aria-labelledby="interests-title">
         <span class="section-label">Beyond work</span>
-        <h2 class="section-heading" id="interests-title">A few things I enjoy.</h2>
+        <h2 class="section-heading" id="interests-title">A few things that keep me inspired.</h2>
         <div class="interest-grid">
           <article class="card interest-card"><h3>Motorcycling</h3></article>
           <article class="card interest-card"><h3>Diving</h3></article>
@@ -539,8 +563,8 @@
           <span class="section-label">Contact</span>
           <div class="contact-grid">
             <div>
-              <h2 class="section-heading" id="contact-title">Let’s connect.</h2>
-              <p class="contact-note">If you’re building something thoughtful, feel free to reach out.</p>
+              <h2 class="section-heading" id="contact-title">Let’s build something good together.</h2>
+              <p class="contact-note">Have an idea, a project, or just want to say hello? I’d love to hear from you.</p>
             </div>
             <div>
               <div class="contact-actions">
