@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Loed Idzinga — Ruby Developer & Secure Product Engineer</title>
-  <meta name="description" content="Loed Idzinga is a Ruby developer building secure, joyful, high-quality web applications with Ruby on Rails and a thoughtful product mindset." />
+  <meta name="description" content="Loed Idzinga is a Ruby developer building secure, elegant, high-quality web applications with Ruby on Rails and a thoughtful product mindset." />
   <meta name="theme-color" content="#f8f7f4" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,21 +14,19 @@
     :root {
       --bg: #f8f7f4;
       --surface: #ffffff;
-      --surface-soft: #f4f3ea;
-      --surface-alt: #fbf8f1;
+      --surface-soft: #f5f2ea;
       --text: #171717;
       --muted: #66645e;
-      --border: #e8e2d7;
-      --border-strong: #ddd6ca;
-      --accent: #58b28c;
-      --accent-strong: #2d8a68;
-      --accent-soft: rgba(88, 178, 140, 0.12);
-      --shadow: 0 24px 70px rgba(23, 23, 23, 0.08);
-      --shadow-soft: 0 10px 30px rgba(23, 23, 23, 0.05);
-      --radius-xl: 34px;
-      --radius-lg: 26px;
-      --radius-md: 18px;
-      --max-width: 1180px;
+      --border: #e7e1d6;
+      --border-strong: #dbd3c6;
+      --accent: #78bea0;
+      --accent-strong: #4f9d7d;
+      --accent-soft: rgba(120, 190, 160, 0.12);
+      --shadow: 0 22px 60px rgba(23, 23, 23, 0.06);
+      --shadow-soft: 0 10px 28px rgba(23, 23, 23, 0.04);
+      --radius-xl: 30px;
+      --radius-lg: 24px;
+      --max-width: 1160px;
     }
 
     * { box-sizing: border-box; }
@@ -38,8 +36,7 @@
       margin: 0;
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.95), transparent 35%),
-        radial-gradient(circle at 90% 10%, rgba(88, 178, 140, 0.08), transparent 20%),
+        radial-gradient(circle at top left, rgba(255,255,255,0.96), transparent 32%),
         linear-gradient(180deg, #fcfbf8 0%, var(--bg) 100%);
       color: var(--text);
       line-height: 1.6;
@@ -57,9 +54,9 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(16px);
+      backdrop-filter: blur(14px);
       background: rgba(248, 247, 244, 0.82);
-      border-bottom: 1px solid rgba(231, 226, 216, 0.75);
+      border-bottom: 1px solid rgba(231, 225, 214, 0.8);
     }
 
     .nav {
@@ -89,12 +86,12 @@
     }
 
     .hero {
-      padding: 5.5rem 0 4.75rem;
+      padding: 5.75rem 0 5rem;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.6fr);
+      grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.58fr);
       gap: 3rem;
       align-items: center;
     }
@@ -107,7 +104,7 @@
       padding: 0.55rem 0.95rem;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.86);
+      background: rgba(255, 255, 255, 0.88);
       color: var(--accent-strong);
       font-size: 0.9rem;
       font-weight: 600;
@@ -121,24 +118,23 @@
     }
 
     h1 {
-      font-size: clamp(3.2rem, 7vw, 5.6rem);
-      margin-top: 1.15rem;
+      font-size: clamp(3.2rem, 7vw, 5.5rem);
+      margin-top: 1.1rem;
       max-width: 8.5ch;
     }
 
     .hero-copy p,
     .section-intro,
     .card p,
-    .company-card p,
     .contact-note,
     footer {
       color: var(--muted);
     }
 
     .hero-copy p {
-      max-width: 36ch;
+      max-width: 35ch;
       font-size: 1.08rem;
-      margin: 1.25rem 0 0;
+      margin: 1.2rem 0 0;
     }
 
     .hero-actions,
@@ -149,20 +145,15 @@
       flex-wrap: wrap;
     }
 
-    .hero-actions {
-      margin-top: 2rem;
-    }
-
-    .hero-pills {
-      margin-top: 1.5rem;
-    }
+    .hero-actions { margin-top: 2rem; }
+    .hero-pills { margin-top: 1.45rem; }
 
     .button,
     .button-secondary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.98rem 1.3rem;
+      padding: 0.95rem 1.3rem;
       border-radius: 999px;
       font-weight: 600;
       transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
@@ -171,18 +162,17 @@
     .button {
       background: var(--accent);
       color: #fff;
-      box-shadow: 0 14px 34px rgba(88, 178, 140, 0.28);
+      box-shadow: 0 12px 28px rgba(120, 190, 160, 0.22);
     }
 
     .button-secondary {
       border: 1px solid var(--border-strong);
-      background: rgba(255, 255, 255, 0.84);
+      background: rgba(255, 255, 255, 0.88);
     }
 
     .button:hover,
     .button-secondary:hover,
     .card:hover,
-    .company-card:hover,
     .about-panel:hover,
     .contact-panel:hover {
       transform: translateY(-2px);
@@ -190,29 +180,28 @@
 
     .hero-card,
     .card,
-    .company-card,
     .about-panel,
     .contact-panel {
-      background: rgba(255, 255, 255, 0.84);
+      background: rgba(255, 255, 255, 0.86);
       border: 1px solid var(--border);
       box-shadow: var(--shadow-soft);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .hero-card {
-      border-radius: 999px;
+      border-radius: var(--radius-xl);
       padding: 0.9rem;
-      max-width: 290px;
+      max-width: 250px;
       margin-left: auto;
       box-shadow: var(--shadow);
-      background: linear-gradient(180deg, #ffffff 0%, #f7f4ee 100%);
+      background: linear-gradient(180deg, #ffffff 0%, #f8f5ee 100%);
     }
 
     .hero-photo {
-      border-radius: 999px;
+      border-radius: 22px;
       overflow: hidden;
-      aspect-ratio: 1 / 1.15;
-      background: linear-gradient(180deg, #ebe6db 0%, #f9f8f4 100%);
+      aspect-ratio: 4 / 5;
+      background: linear-gradient(180deg, #ece6db 0%, #f8f6f0 100%);
     }
 
     .hero-photo img {
@@ -236,28 +225,29 @@
     }
 
     .section-heading {
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
-      margin-bottom: 1rem;
+      font-size: clamp(2.2rem, 4vw, 3.1rem);
+      margin-bottom: 0.95rem;
     }
 
     .section-intro {
-      max-width: 42ch;
-      margin: 0 0 2rem;
+      max-width: 40ch;
+      margin: 0 0 1.8rem;
     }
 
     .about-panel,
-    .contact-panel {
+    .contact-panel,
+    .card {
       border-radius: var(--radius-lg);
-      padding: 1.75rem;
+      padding: 1.6rem;
     }
 
     .about-panel {
-      max-width: 760px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(251,248,241,0.95));
+      max-width: 720px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(248,245,238,0.96));
     }
 
-    .company-grid,
     .expertise-grid,
+    .company-grid,
     .interest-grid,
     .contact-grid {
       display: grid;
@@ -279,15 +269,9 @@
       gap: 2rem;
     }
 
-    .card,
-    .company-card {
-      border-radius: var(--radius-lg);
-      padding: 1.6rem;
-    }
-
     .card-kicker {
       display: inline-flex;
-      margin-bottom: 0.9rem;
+      margin-bottom: 0.85rem;
       padding: 0.35rem 0.7rem;
       border-radius: 999px;
       background: var(--accent-soft);
@@ -298,89 +282,26 @@
       text-transform: uppercase;
     }
 
-    .expertise-card {
-      min-height: 250px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: linear-gradient(180deg, #ffffff 0%, #fbf8f1 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .expertise-card::before {
-      content: "";
-      position: absolute;
-      top: -26px;
-      right: -26px;
-      width: 130px;
-      height: 130px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-    }
-
-    .expertise-card::after {
-      content: "";
-      position: absolute;
-      bottom: 22px;
-      right: 22px;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: var(--accent);
-      opacity: 0.35;
-    }
-
-    .expertise-card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .expertise-card h3 {
-      font-size: clamp(1.7rem, 2.2vw, 2.15rem);
-      max-width: 9ch;
-    }
-
-    .expertise-card p {
-      max-width: 25ch;
-      margin: 0;
-      font-size: 1rem;
-    }
-
-    .company-card {
-      background: linear-gradient(180deg, #ffffff 0%, #fcfbf8 100%);
-    }
-
-    .company-card h3 {
+    .card h3 {
       margin-bottom: 0.35rem;
     }
 
+    .experience-card,
+    .expertise-card,
     .interest-card {
-      min-height: 170px;
+      background: linear-gradient(180deg, #ffffff 0%, #fcfbf8 100%);
+    }
+
+    .expertise-card,
+    .interest-card {
+      min-height: 180px;
       display: flex;
-      align-items: flex-end;
-      background: linear-gradient(180deg, #faf7f0 0%, #ffffff 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .interest-card::before {
-      content: "";
-      position: absolute;
-      inset: 18px auto auto 18px;
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      background: var(--accent-soft);
-    }
-
-    .interest-card h3 {
-      position: relative;
-      z-index: 1;
+      flex-direction: column;
+      justify-content: flex-end;
     }
 
     .contact-panel {
-      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,244,236,0.98));
+      background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(248,244,236,0.98));
     }
 
     .contact-note {
@@ -408,7 +329,7 @@
 
       .hero-card {
         margin: 0;
-        max-width: 240px;
+        max-width: 230px;
       }
 
       h1 {
@@ -454,8 +375,8 @@
         <div class="hero-grid">
           <div class="hero-copy">
             <span class="eyebrow">Ruby Developer · Secure Web Applications</span>
-            <h1 id="hero-title">Building with care, clarity, and joy.</h1>
-            <p>I create Ruby on Rails applications that feel reliable, thoughtful, and a pleasure to use.</p>
+            <h1 id="hero-title">Elegant software, built with care.</h1>
+            <p>I build Ruby on Rails applications that feel reliable, refined, and thoughtfully made.</p>
             <div class="hero-actions">
               <a class="button" href="#contact">Let’s connect</a>
               <a class="button-secondary" href="#experience">View experience</a>
@@ -477,69 +398,61 @@
 
       <section id="about" aria-labelledby="about-title">
         <span class="section-label">About</span>
-        <h2 class="section-heading" id="about-title">Thoughtful software, built with a positive mindset.</h2>
+        <h2 class="section-heading" id="about-title">Clear thinking, calm execution, beautiful results.</h2>
         <div class="about-panel">
-          <p class="section-intro">I love building digital products that are clear, maintainable, and secure — with equal care for the code and the people using it.</p>
+          <p class="section-intro">I enjoy building digital products that are secure, maintainable, and enjoyable to use — with attention to both technical quality and human experience.</p>
         </div>
       </section>
 
       <section id="expertise" aria-labelledby="expertise-title">
         <span class="section-label">Expertise</span>
         <h2 class="section-heading" id="expertise-title">What I bring.</h2>
-        <p class="section-intro">A blend of craftsmanship, practicality, and security-minded thinking.</p>
+        <p class="section-intro">A focused mix of craftsmanship, reliability, and thoughtful engineering.</p>
         <div class="expertise-grid">
           <article class="card expertise-card">
-            <div>
-              <span class="card-kicker">01</span>
-              <h3>Ruby on Rails</h3>
-            </div>
-            <p>Well-structured applications that stay enjoyable to build and easy to maintain.</p>
+            <span class="card-kicker">01</span>
+            <h3>Ruby on Rails</h3>
+            <p>Structured applications that remain clean, steady, and easy to grow.</p>
           </article>
           <article class="card expertise-card">
-            <div>
-              <span class="card-kicker">02</span>
-              <h3>Cybersecurity</h3>
-            </div>
-            <p>Security built in from the start, in a way that stays practical and human.</p>
+            <span class="card-kicker">02</span>
+            <h3>Cybersecurity</h3>
+            <p>Security considered early, implemented carefully, and kept practical.</p>
           </article>
           <article class="card expertise-card">
-            <div>
-              <span class="card-kicker">03</span>
-              <h3>APIs & Integrations</h3>
-            </div>
-            <p>Reliable connections between systems, designed to work smoothly and last well.</p>
+            <span class="card-kicker">03</span>
+            <h3>APIs & Integrations</h3>
+            <p>Reliable systems designed to connect smoothly and work with confidence.</p>
           </article>
           <article class="card expertise-card">
-            <div>
-              <span class="card-kicker">04</span>
-              <h3>Product Engineering</h3>
-            </div>
-            <p>Thoughtful technical decisions that support quality, clarity, and steady progress.</p>
+            <span class="card-kicker">04</span>
+            <h3>Product Engineering</h3>
+            <p>Thoughtful choices that support quality, clarity, and long-term momentum.</p>
           </article>
         </div>
       </section>
 
       <section id="experience" aria-labelledby="experience-title">
         <span class="section-label">Experience</span>
-        <h2 class="section-heading" id="experience-title">Places I’ve enjoyed building for.</h2>
-        <p class="section-intro">A few teams, products, and companies that have been part of the journey.</p>
+        <h2 class="section-heading" id="experience-title">Selected work.</h2>
+        <p class="section-intro">A few teams and products I’ve had the pleasure of contributing to.</p>
         <div class="company-grid">
-          <article class="company-card">
+          <article class="card experience-card">
             <span class="card-kicker">Current</span>
             <h3>Booking Experts</h3>
             <p>Ruby Developer</p>
           </article>
-          <article class="company-card">
+          <article class="card experience-card">
             <span class="card-kicker">Founder</span>
             <h3>SEQT</h3>
             <p>Cybersecurity</p>
           </article>
-          <article class="company-card">
+          <article class="card experience-card">
             <span class="card-kicker">Previous</span>
             <h3>Kamera Express</h3>
             <p>Ruby Developer</p>
           </article>
-          <article class="company-card">
+          <article class="card experience-card">
             <span class="card-kicker">Previous</span>
             <h3>Nedap Healthcare</h3>
             <p>Software Engineering</p>
@@ -563,8 +476,8 @@
           <span class="section-label">Contact</span>
           <div class="contact-grid">
             <div>
-              <h2 class="section-heading" id="contact-title">Let’s build something good together.</h2>
-              <p class="contact-note">Have an idea, a project, or just want to say hello? I’d love to hear from you.</p>
+              <h2 class="section-heading" id="contact-title">Let’s build something meaningful.</h2>
+              <p class="contact-note">Have a project, an idea, or a good conversation in mind? I’d be happy to hear from you.</p>
             </div>
             <div>
               <div class="contact-actions">
