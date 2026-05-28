@@ -23,6 +23,14 @@
       --accent: #78bea0;
       --accent-strong: #4f9d7d;
       --accent-soft: rgba(120, 190, 160, 0.12);
+      --tag-current-bg: rgba(120, 190, 160, 0.14);
+      --tag-current-text: #4f9d7d;
+      --tag-founder-bg: rgba(181, 87, 87, 0.12);
+      --tag-founder-text: #a14b4b;
+      --tag-previous-bg: rgba(122, 118, 110, 0.12);
+      --tag-previous-text: #6f6a63;
+      --tag-default-bg: rgba(120, 190, 160, 0.12);
+      --tag-default-text: #4f9d7d;
       --shadow: 0 22px 60px rgba(23, 23, 23, 0.06);
       --shadow-soft: 0 10px 28px rgba(23, 23, 23, 0.04);
       --radius-xl: 30px;
@@ -100,7 +108,6 @@
       align-items: center;
     }
 
-    .hero-intro,
     .mini-pill {
       display: inline-flex;
       align-items: center;
@@ -123,7 +130,6 @@
 
     h1 {
       font-size: clamp(3.6rem, 7vw, 5.9rem);
-      margin-top: 1.15rem;
       max-width: 8ch;
     }
 
@@ -182,14 +188,12 @@
     .button:hover,
     .button-secondary:hover,
     .card:hover,
-    .about-panel:hover,
     .contact-panel:hover {
       transform: translateY(-2px);
     }
 
     .hero-card,
     .card,
-    .about-panel,
     .contact-panel {
       background: rgba(255, 255, 255, 0.86);
       border: 1px solid var(--border);
@@ -240,20 +244,14 @@
     }
 
     .section-intro {
-      max-width: 40ch;
+      max-width: 52ch;
       margin: 0 0 1.8rem;
     }
 
-    .about-panel,
     .contact-panel,
     .card {
       border-radius: var(--radius-lg);
       padding: 1.6rem;
-    }
-
-    .about-panel {
-      max-width: 760px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(248,245,238,0.96));
     }
 
     .expertise-grid,
@@ -282,15 +280,38 @@
 
     .card-kicker {
       display: inline-flex;
+      align-self: start;
+      justify-self: start;
+      width: auto;
+      max-width: max-content;
       margin-bottom: 0.85rem;
       padding: 0.35rem 0.7rem;
       border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent-strong);
       font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.04em;
       text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .tag-current {
+      background: var(--tag-current-bg);
+      color: var(--tag-current-text);
+    }
+
+    .tag-founder {
+      background: var(--tag-founder-bg);
+      color: var(--tag-founder-text);
+    }
+
+    .tag-previous {
+      background: var(--tag-previous-bg);
+      color: var(--tag-previous-text);
+    }
+
+    .tag-default {
+      background: var(--tag-default-bg);
+      color: var(--tag-default-text);
     }
 
     .card {
@@ -395,7 +416,6 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-grid">
           <div class="hero-copy">
-            <span class="hero-intro">Hi, I’m Loed Idzinga</span>
             <h1 id="hero-title">Elegant software, built with care.</h1>
             <p>I build Ruby on Rails applications that feel reliable, refined, and thoughtfully made.</p>
             <div class="hero-actions">
@@ -417,38 +437,30 @@
         </div>
       </section>
 
-      <section id="about" aria-labelledby="about-title">
-        <span class="section-label">About</span>
-        <h2 class="section-heading" id="about-title">Clear thinking, calm execution, and work with character.</h2>
-        <div class="about-panel">
-          <p class="section-intro">I enjoy building digital products that are secure, maintainable, and enjoyable to use — with attention to both technical quality and human experience.</p>
-        </div>
-      </section>
-
       <section id="expertise" aria-labelledby="expertise-title">
         <span class="section-label">Expertise</span>
-        <h2 class="section-heading" id="expertise-title">What I bring.</h2>
-        <p class="section-intro">A focused mix of craftsmanship, reliability, and thoughtful engineering.</p>
+        <h2 class="section-heading" id="expertise-title">Clear thinking, calm execution, and work with character.</h2>
+        <p class="section-intro">I enjoy building digital products that are secure, maintainable, and enjoyable to use — with attention to both technical quality and human experience. My work often sits at the intersection of product thinking, clean Rails development, thoughtful architecture, and dependable delivery.</p>
         <div class="expertise-grid">
           <article class="card expertise-card">
-            <span class="card-kicker">01</span>
+            <span class="card-kicker tag-default">01</span>
             <h3>Ruby on Rails</h3>
             <p>Structured applications that remain clean, steady, and easy to grow.</p>
           </article>
           <article class="card expertise-card">
-            <span class="card-kicker">02</span>
+            <span class="card-kicker tag-default">02</span>
             <h3>Cybersecurity</h3>
             <p>Security considered early, implemented carefully, and kept practical.</p>
           </article>
           <article class="card expertise-card">
-            <span class="card-kicker">03</span>
-            <h3>APIs & Integrations</h3>
-            <p>Reliable systems designed to connect smoothly and work with confidence.</p>
+            <span class="card-kicker tag-default">03</span>
+            <h3>Architecture & Systems</h3>
+            <p>Reliable systems shaped with clarity, good structure, and long-term maintainability in mind.</p>
           </article>
           <article class="card expertise-card">
-            <span class="card-kicker">04</span>
+            <span class="card-kicker tag-default">04</span>
             <h3>Product Engineering</h3>
-            <p>Thoughtful choices that support quality, clarity, and long-term momentum.</p>
+            <p>Thoughtful choices that support quality, clarity, and steady forward momentum.</p>
           </article>
         </div>
       </section>
@@ -459,22 +471,22 @@
         <p class="section-intro">A few teams and products I’ve had the pleasure of contributing to.</p>
         <div class="company-grid">
           <article class="card experience-card">
-            <span class="card-kicker">Current</span>
+            <span class="card-kicker tag-current">Current</span>
             <h3>Booking Experts</h3>
             <p>Ruby Developer</p>
           </article>
           <article class="card experience-card">
-            <span class="card-kicker">Founder</span>
+            <span class="card-kicker tag-founder">Founder</span>
             <h3>SEQT</h3>
             <p>Cybersecurity</p>
           </article>
           <article class="card experience-card">
-            <span class="card-kicker">Previous</span>
+            <span class="card-kicker tag-previous">Previous</span>
             <h3>Kamera Express</h3>
             <p>Ruby Developer</p>
           </article>
           <article class="card experience-card">
-            <span class="card-kicker">Previous</span>
+            <span class="card-kicker tag-previous">Previous</span>
             <h3>Nedap Healthcare</h3>
             <p>Software Engineering</p>
           </article>
