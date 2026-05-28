@@ -15,6 +15,7 @@
       --bg: #f8f7f4;
       --surface: #ffffff;
       --surface-soft: #f5f2ea;
+      --surface-alt: #fbf8f1;
       --text: #171717;
       --muted: #66645e;
       --border: #e7e1d6;
@@ -27,7 +28,7 @@
       --radius-xl: 30px;
       --radius-lg: 24px;
       --max-width: 1160px;
-      --section-space: 5.5rem;
+      --section-space: 5.75rem;
       --grid-gap: 1.25rem;
     }
 
@@ -89,17 +90,17 @@
     }
 
     .hero {
-      padding: 5.75rem 0 var(--section-space);
+      padding: 6rem 0 var(--section-space);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 7fr) minmax(220px, 3fr);
-      gap: 3rem;
+      grid-template-columns: minmax(0, 6.2fr) minmax(320px, 3.8fr);
+      gap: 3.5rem;
       align-items: center;
     }
 
-    .eyebrow,
+    .hero-intro,
     .mini-pill {
       display: inline-flex;
       align-items: center;
@@ -121,9 +122,9 @@
     }
 
     h1 {
-      font-size: clamp(3.2rem, 7vw, 5.5rem);
-      margin-top: 1.1rem;
-      max-width: 8.5ch;
+      font-size: clamp(3.6rem, 7vw, 5.9rem);
+      margin-top: 1.15rem;
+      max-width: 8ch;
     }
 
     .hero-copy p,
@@ -140,9 +141,9 @@
     }
 
     .hero-copy p {
-      max-width: 35ch;
+      max-width: 34ch;
       font-size: 1.08rem;
-      margin: 1.2rem 0 0;
+      margin: 1.25rem 0 0;
     }
 
     .hero-actions,
@@ -154,7 +155,7 @@
     }
 
     .hero-actions { margin-top: 2rem; }
-    .hero-pills { margin-top: 1.45rem; }
+    .hero-pills { margin-top: 1.5rem; }
 
     .button,
     .button-secondary {
@@ -198,9 +199,9 @@
 
     .hero-card {
       border-radius: var(--radius-xl);
-      padding: 0.9rem;
+      padding: 1rem;
       width: 100%;
-      max-width: 250px;
+      max-width: 360px;
       justify-self: end;
       box-shadow: var(--shadow);
       background: linear-gradient(180deg, #ffffff 0%, #f8f5ee 100%);
@@ -251,7 +252,7 @@
     }
 
     .about-panel {
-      max-width: 720px;
+      max-width: 760px;
       background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(248,245,238,0.96));
     }
 
@@ -315,12 +316,9 @@
     }
 
     .interest-card {
-      min-height: 160px;
-    }
-
-    .interest-card,
-    .expertise-card {
-      justify-content: end;
+      min-height: 170px;
+      align-content: end;
+      justify-content: start;
     }
 
     .contact-panel {
@@ -357,7 +355,7 @@
 
       .hero-card {
         justify-self: start;
-        max-width: 230px;
+        max-width: 300px;
       }
 
       h1 {
@@ -397,7 +395,7 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-grid">
           <div class="hero-copy">
-            <span class="eyebrow">Ruby Developer · Secure Web Applications</span>
+            <span class="hero-intro">Hi, I’m Loed Idzinga</span>
             <h1 id="hero-title">Elegant software, built with care.</h1>
             <p>I build Ruby on Rails applications that feel reliable, refined, and thoughtfully made.</p>
             <div class="hero-actions">
@@ -421,7 +419,7 @@
 
       <section id="about" aria-labelledby="about-title">
         <span class="section-label">About</span>
-        <h2 class="section-heading" id="about-title">Clear thinking, calm execution, beautiful results.</h2>
+        <h2 class="section-heading" id="about-title">Clear thinking, calm execution, and work with character.</h2>
         <div class="about-panel">
           <p class="section-intro">I enjoy building digital products that are secure, maintainable, and enjoyable to use — with attention to both technical quality and human experience.</p>
         </div>
