@@ -14,7 +14,7 @@
     :root {
       --bg: #f8f7f4;
       --surface: #ffffff;
-      --surface-alt: #f2efe8;
+      --surface-soft: #f3efe7;
       --text: #171717;
       --muted: #66645e;
       --border: #e7e2d8;
@@ -23,17 +23,11 @@
       --shadow: 0 20px 60px rgba(23, 23, 23, 0.08);
       --radius-xl: 32px;
       --radius-lg: 24px;
-      --radius-md: 18px;
       --max-width: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -43,15 +37,8 @@
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
     .page-shell {
       width: min(calc(100% - 2rem), var(--max-width));
@@ -99,7 +86,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.9fr);
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.85fr);
       gap: 2rem;
       align-items: center;
     }
@@ -107,19 +94,16 @@
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
       padding: 0.55rem 0.95rem;
       border-radius: 999px;
       border: 1px solid var(--border);
       background: rgba(255, 255, 255, 0.8);
       color: var(--accent-strong);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 600;
     }
 
-    h1,
-    h2,
-    h3 {
+    h1, h2, h3 {
       font-family: "Manrope", "Inter", sans-serif;
       letter-spacing: -0.04em;
       margin: 0;
@@ -127,16 +111,22 @@
     }
 
     h1 {
-      font-size: clamp(3rem, 7vw, 5.6rem);
-      margin-top: 1.2rem;
-      max-width: 10ch;
+      font-size: clamp(3rem, 7vw, 5.2rem);
+      margin-top: 1rem;
+      max-width: 9ch;
+    }
+
+    .hero-copy p,
+    .section-intro,
+    .card p,
+    footer {
+      color: var(--muted);
     }
 
     .hero-copy p {
-      max-width: 60ch;
-      color: var(--muted);
-      font-size: 1.08rem;
-      margin: 1.5rem 0 0;
+      max-width: 42ch;
+      font-size: 1.04rem;
+      margin: 1.2rem 0 0;
     }
 
     .hero-actions,
@@ -144,7 +134,7 @@
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
-      margin-top: 2rem;
+      margin-top: 1.75rem;
     }
 
     .button,
@@ -155,7 +145,7 @@
       padding: 0.95rem 1.25rem;
       border-radius: 999px;
       font-weight: 600;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .button {
@@ -167,15 +157,11 @@
     .button-secondary {
       border: 1px solid var(--border);
       background: rgba(255, 255, 255, 0.75);
-      color: var(--text);
     }
 
     .button:hover,
     .button-secondary:hover,
-    .button:focus-visible,
-    .button-secondary:focus-visible,
-    .card:hover,
-    .card:focus-within {
+    .card:hover {
       transform: translateY(-2px);
     }
 
@@ -183,16 +169,16 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      margin-top: 1.6rem;
+      margin-top: 1.25rem;
       color: var(--muted);
       font-size: 0.95rem;
     }
 
     .hero-card,
     .card,
-    .section-panel,
-    .trust-strip {
-      background: rgba(255, 255, 255, 0.78);
+    .company-card,
+    .contact-panel {
+      background: rgba(255, 255, 255, 0.82);
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
     }
@@ -203,13 +189,10 @@
     }
 
     .hero-photo {
-      border-radius: calc(var(--radius-xl) - 8px);
+      border-radius: 24px;
       overflow: hidden;
       aspect-ratio: 4 / 5;
       background: linear-gradient(180deg, #ebe6db 0%, #f9f8f4 100%);
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(231, 226, 216, 0.9);
     }
 
     .hero-photo img {
@@ -218,25 +201,12 @@
       object-fit: cover;
     }
 
-    .trust-strip {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
-      padding: 1.15rem 1.25rem;
-      border-radius: var(--radius-lg);
-      margin: 1rem 0 4rem;
-      color: var(--muted);
-      text-align: center;
-      font-size: 0.96rem;
-      font-weight: 600;
-    }
-
     main section {
       padding: 0 0 4rem;
     }
 
     .section-label {
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 700;
       color: var(--accent);
       text-transform: uppercase;
@@ -246,59 +216,31 @@
     }
 
     .section-heading {
-      font-size: clamp(2rem, 4vw, 3.25rem);
-      margin-bottom: 1rem;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 0.85rem;
     }
 
     .section-intro {
-      color: var(--muted);
-      max-width: 62ch;
-      margin: 0 0 2rem;
+      max-width: 44ch;
+      margin: 0 0 1.75rem;
     }
 
-    .about-grid,
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-      gap: 1.5rem;
-    }
-
-    .section-panel {
+    .about-panel,
+    .contact-panel {
       border-radius: var(--radius-lg);
-      padding: 1.75rem;
+      padding: 1.6rem;
     }
 
-    .facts-list {
-      display: grid;
-      gap: 0.9rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .facts-list li {
-      display: flex;
-      gap: 0.8rem;
-      color: var(--muted);
-    }
-
-    .facts-list strong {
-      color: var(--text);
-      min-width: 7rem;
-    }
-
-    .bento-grid,
-    .experience-grid,
-    .interest-grid {
+    .company-grid,
+    .expertise-grid,
+    .interest-grid,
+    .contact-grid {
       display: grid;
       gap: 1.25rem;
     }
 
-    .bento-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .experience-grid {
+    .company-grid,
+    .expertise-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -306,36 +248,57 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
-    .card {
-      border-radius: var(--radius-lg);
-      padding: 1.5rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    .contact-grid {
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      align-items: center;
     }
 
-    .card-tag {
+    .card,
+    .company-card {
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      transition: transform 0.2s ease;
+    }
+
+    .company-card {
+      background: linear-gradient(180deg, #ffffff 0%, #fcfbf8 100%);
+    }
+
+    .card-kicker {
       display: inline-flex;
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.75rem;
       padding: 0.35rem 0.7rem;
       border-radius: 999px;
-      background: var(--surface-alt);
+      background: var(--surface-soft);
       color: var(--accent-strong);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
 
-    .card p,
-    .section-panel p {
-      color: var(--muted);
-      margin-bottom: 0;
+    .expertise-card {
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: linear-gradient(180deg, #ffffff 0%, #faf8f3 100%);
+    }
+
+    .expertise-card h3 {
+      font-size: clamp(1.5rem, 2.2vw, 2rem);
+      max-width: 10ch;
+    }
+
+    .expertise-card p {
+      max-width: 26ch;
+      margin-top: 1rem;
     }
 
     .interest-card {
-      min-height: 180px;
+      min-height: 150px;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+      align-items: flex-end;
       background: linear-gradient(180deg, #f8f5ee 0%, #ffffff 100%);
     }
 
@@ -345,28 +308,20 @@
 
     footer {
       padding: 0 0 3rem;
-      color: var(--muted);
       font-size: 0.95rem;
     }
 
     @media (max-width: 980px) {
       .hero-grid,
-      .about-grid,
-      .contact-grid,
-      .trust-strip,
-      .bento-grid,
-      .experience-grid,
-      .interest-grid {
+      .company-grid,
+      .expertise-grid,
+      .interest-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding-top: 3rem;
-      }
-
-      h1 {
-        max-width: 100%;
-      }
+      .hero { padding-top: 3rem; }
+      h1 { max-width: 100%; }
     }
 
     @media (max-width: 640px) {
@@ -377,12 +332,6 @@
       .nav {
         flex-direction: column;
         align-items: flex-start;
-      }
-
-      .hero-card,
-      .card,
-      .section-panel {
-        padding: 1.25rem;
       }
     }
   </style>
@@ -396,8 +345,6 @@
         <a href="#expertise">Expertise</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
-        <a href="https://www.linkedin.com/in/loedidzinga/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://github.com/loed-idzinga" target="_blank" rel="noopener noreferrer">GitHub</a>
       </nav>
     </div>
   </header>
@@ -407,18 +354,15 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-grid">
           <div class="hero-copy">
-            <span class="eyebrow">Ruby Developer · Secure Web Applications · Netherlands</span>
-            <h1 id="hero-title">Building secure, reliable web applications.</h1>
-            <p>
-              I help build thoughtful digital products with Ruby on Rails, strong engineering fundamentals,
-              and a security-first mindset.
-            </p>
+            <span class="eyebrow">Ruby Developer · Secure Web Applications</span>
+            <h1 id="hero-title">Simple, secure, reliable.</h1>
+            <p>I build Ruby on Rails applications with a strong focus on quality and security.</p>
             <div class="hero-actions">
               <a class="button" href="#contact">Contact me</a>
-              <a class="button-secondary" href="#experience">View experience</a>
+              <a class="button-secondary" href="#experience">Experience</a>
             </div>
             <div class="hero-meta">
-              <span>Based in Winterswijk</span>
+              <span>Winterswijk</span>
               <span>·</span>
               <span>Ruby on Rails</span>
               <span>·</span>
@@ -434,112 +378,79 @@
         </div>
       </section>
 
-      <div class="trust-strip" aria-label="Companies and initiatives">
-        <span>Booking Experts</span>
-        <span>SEQT</span>
-        <span>Kamera Express</span>
-        <span>Nedap Healthcare</span>
-      </div>
-
       <section id="about" aria-labelledby="about-title">
         <span class="section-label">About</span>
-        <h2 class="section-heading" id="about-title">A calm, product-minded approach to engineering.</h2>
-        <p class="section-intro">
-          I’m a Ruby developer with a strong interest in secure, maintainable software and practical product building.
-          I enjoy creating web applications that feel reliable, thoughtful, and built to last.
-        </p>
-
-        <div class="about-grid">
-          <div class="section-panel">
-            <h3>What I focus on</h3>
-            <p>
-              From Ruby on Rails applications to integrations and secure coding practices, I aim to combine technical quality
-              with clarity, usability, and long-term maintainability.
-            </p>
-          </div>
-
-          <div class="section-panel">
-            <h3>Quick facts</h3>
-            <ul class="facts-list">
-              <li><strong>Location</strong><span>Winterswijk, Gelderland</span></li>
-              <li><strong>Stack</strong><span>Ruby, Rails, APIs, modern web</span></li>
-              <li><strong>Mindset</strong><span>Security-aware and pragmatic</span></li>
-              <li><strong>Open to</strong><span>Collaborations and interesting products</span></li>
-            </ul>
-          </div>
+        <h2 class="section-heading" id="about-title">A calm approach to building good software.</h2>
+        <div class="about-panel">
+          <p class="section-intro">I enjoy building web applications that are clear, maintainable, and secure by design.</p>
         </div>
       </section>
 
       <section id="expertise" aria-labelledby="expertise-title">
         <span class="section-label">Expertise</span>
-        <h2 class="section-heading" id="expertise-title">What I bring to a team or product.</h2>
-        <div class="bento-grid">
-          <article class="card">
-            <span class="card-tag">Ruby on Rails</span>
-            <h3>Maintainable, production-ready applications.</h3>
-            <p>Building reliable features, improving codebases, and keeping delivery practical and sustainable.</p>
+        <h2 class="section-heading" id="expertise-title">What I do.</h2>
+        <div class="expertise-grid">
+          <article class="card expertise-card">
+            <div>
+              <span class="card-kicker">01</span>
+              <h3>Ruby on Rails</h3>
+            </div>
+            <p>Clean, maintainable applications.</p>
           </article>
-          <article class="card">
-            <span class="card-tag">Cybersecurity</span>
-            <h3>Security-aware engineering by default.</h3>
-            <p>Secure coding, awareness, and pragmatic decisions that improve resilience without unnecessary complexity.</p>
+          <article class="card expertise-card">
+            <div>
+              <span class="card-kicker">02</span>
+              <h3>Cybersecurity</h3>
+            </div>
+            <p>Secure by default, practical by design.</p>
           </article>
-          <article class="card">
-            <span class="card-tag">APIs & Integrations</span>
-            <h3>Robust backends and connected systems.</h3>
-            <p>Designing and maintaining APIs and integrations that support dependable product experiences.</p>
+          <article class="card expertise-card">
+            <div>
+              <span class="card-kicker">03</span>
+              <h3>APIs & Integrations</h3>
+            </div>
+            <p>Reliable systems that work well together.</p>
           </article>
-          <article class="card">
-            <span class="card-tag">Product Engineering</span>
-            <h3>Balancing speed, quality, and business value.</h3>
-            <p>Turning requirements into solid solutions with attention to usability, architecture, and maintainability.</p>
-          </article>
-          <article class="card">
-            <span class="card-tag">Performance</span>
-            <h3>Fast, lightweight user experiences.</h3>
-            <p>Keeping interfaces responsive and implementation choices efficient, accessible, and easy to maintain.</p>
-          </article>
-          <article class="card">
-            <span class="card-tag">Ownership</span>
-            <h3>Thoughtful delivery from concept to production.</h3>
-            <p>Working with care across implementation details, product goals, and long-term technical quality.</p>
+          <article class="card expertise-card">
+            <div>
+              <span class="card-kicker">04</span>
+              <h3>Product Engineering</h3>
+            </div>
+            <p>Thoughtful solutions with attention to quality.</p>
           </article>
         </div>
       </section>
 
       <section id="experience" aria-labelledby="experience-title">
         <span class="section-label">Experience</span>
-        <h2 class="section-heading" id="experience-title">Selected work and companies.</h2>
-        <div class="experience-grid">
-          <article class="card">
-            <span class="card-tag">Current</span>
+        <h2 class="section-heading" id="experience-title">Selected work.</h2>
+        <div class="company-grid">
+          <article class="company-card">
+            <span class="card-kicker">Current</span>
             <h3>Booking Experts</h3>
-            <p>Ruby Developer building and improving digital products for the camping and hospitality industry.</p>
+            <p>Ruby Developer</p>
           </article>
-          <article class="card">
-            <span class="card-tag">Founder</span>
+          <article class="company-card">
+            <span class="card-kicker">Founder</span>
             <h3>SEQT</h3>
-            <p>Helping organizations improve cybersecurity awareness and strengthen practical digital resilience.</p>
+            <p>Cybersecurity</p>
           </article>
-          <article class="card">
-            <span class="card-tag">Previous</span>
+          <article class="company-card">
+            <span class="card-kicker">Previous</span>
             <h3>Kamera Express</h3>
-            <p>Worked on rental and e-commerce experiences with a focus on usability, reliability, and product quality.</p>
+            <p>Ruby Developer</p>
           </article>
-          <article class="card">
-            <span class="card-tag">Previous</span>
+          <article class="company-card">
+            <span class="card-kicker">Previous</span>
             <h3>Nedap Healthcare</h3>
-            <p>Contributed to healthcare software with a focus on dependable systems and meaningful user impact.</p>
+            <p>Software Engineering</p>
           </article>
         </div>
       </section>
 
       <section id="interests" aria-labelledby="interests-title">
         <span class="section-label">Beyond work</span>
-        <h2 class="section-heading" id="interests-title">Grounded by focus, calm, and commitment.</h2>
-        <p class="section-intro">
-          Outside of software, I enjoy disciplines that reward attention, consistency, and staying sharp over time.
-        </p>
+        <h2 class="section-heading" id="interests-title">A few things I enjoy.</h2>
         <div class="interest-grid">
           <article class="card interest-card"><h3>Motorcycling</h3></article>
           <article class="card interest-card"><h3>Diving</h3></article>
@@ -549,15 +460,12 @@
       </section>
 
       <section id="contact" aria-labelledby="contact-title">
-        <div class="section-panel contact-panel">
+        <div class="contact-panel">
           <span class="section-label">Contact</span>
           <div class="contact-grid">
             <div>
-              <h2 class="section-heading" id="contact-title">Looking for a Ruby developer with a strong eye for security and quality?</h2>
-              <p>
-                Let’s connect if you’re building something thoughtful and want engineering that values reliability,
-                maintainability, and clarity.
-              </p>
+              <h2 class="section-heading" id="contact-title">Let’s connect.</h2>
+              <p>If you’re building something thoughtful, feel free to reach out.</p>
             </div>
             <div>
               <div class="contact-actions">
