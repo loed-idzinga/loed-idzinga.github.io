@@ -77,6 +77,7 @@
       --color-surface-alt: #fbf8f1;
       --color-text: #171717;
       --color-muted: #66645e;
+      --color-muted-strong: #56524c;
       --color-border: #e7e1d6;
       --color-border-strong: #dbd3c6;
       --color-accent: #1f6b4f;
@@ -182,8 +183,8 @@
     }
 
     .hero__grid {
-      grid-template-columns: minmax(0, 6.2fr) minmax(320px, 3.8fr);
-      gap: 3.5rem;
+      grid-template-columns: minmax(0, 6.4fr) minmax(300px, 3.6fr);
+      gap: 4rem;
       align-items: center;
     }
 
@@ -196,9 +197,9 @@
     }
 
     .contact__grid {
-      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-columns: minmax(0, 1.15fr) minmax(260px, auto);
       gap: 2rem;
-      align-items: center;
+      align-items: start;
     }
 
     .hero__content {
@@ -207,8 +208,15 @@
     }
 
     .hero__title {
-      max-width: 8ch;
-      font-size: clamp(3.6rem, 7vw, 5.9rem);
+      max-width: 10ch;
+      font-size: clamp(4rem, 8vw, 6.4rem);
+      line-height: 0.94;
+      letter-spacing: -0.055em;
+      text-wrap: balance;
+    }
+
+    .hero__title-line {
+      display: block;
     }
 
     .hero__text,
@@ -220,9 +228,10 @@
     }
 
     .hero__text {
-      max-width: 36ch;
-      margin-top: 1.25rem;
-      font-size: 1.08rem;
+      max-width: 42ch;
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      color: var(--color-muted-strong);
     }
 
     .hero__actions,
@@ -313,7 +322,7 @@
 
     .hero-card {
       width: 100%;
-      max-width: 360px;
+      max-width: 380px;
       padding: 1rem;
       justify-self: end;
       border-radius: var(--radius-xl);
@@ -345,14 +354,18 @@
     }
 
     .section__title {
-      margin-bottom: 0.95rem;
-      font-size: clamp(2.2rem, 4vw, 3.1rem);
+      margin-bottom: 1rem;
+      font-size: clamp(2.2rem, 4vw, 3.25rem);
+      max-width: 16ch;
+      text-wrap: balance;
     }
 
     .section__intro {
       width: 100%;
       max-width: none;
-      margin-bottom: 1.8rem;
+      margin-bottom: 2rem;
+      font-size: 1.03rem;
+      color: var(--color-muted-strong);
     }
 
     .card,
@@ -375,16 +388,22 @@
     }
 
     .card__title {
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.45rem;
+      font-size: 1.55rem;
+      line-height: 1.04;
+    }
+
+    .card__text {
+      font-size: 0.98rem;
     }
 
     .card--experience,
     .card--expertise {
-      min-height: 220px;
+      min-height: 228px;
     }
 
     .card--interest {
-      min-height: 220px;
+      min-height: 240px;
       position: relative;
       overflow: hidden;
       background-position: center;
@@ -398,7 +417,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(23, 23, 23, 0.04) 0%, rgba(23, 23, 23, 0.46) 100%);
+      background: linear-gradient(180deg, rgba(23, 23, 23, 0.04) 0%, rgba(23, 23, 23, 0.5) 100%);
     }
 
     .card--interest .card__title {
@@ -420,6 +439,8 @@
     .contact__text {
       width: 100%;
       max-width: none;
+      font-size: 1.03rem;
+      color: var(--color-muted-strong);
     }
 
     .site-footer {
@@ -447,10 +468,11 @@
 
       .hero-card {
         justify-self: start;
-        max-width: 300px;
+        max-width: 320px;
       }
 
-      .hero__title {
+      .hero__title,
+      .section__title {
         max-width: 100%;
       }
     }
@@ -466,6 +488,10 @@
 
       .hero {
         padding-top: 3rem;
+      }
+
+      .hero__title {
+        font-size: clamp(3.2rem, 12vw, 4.6rem);
       }
     }
   </style>
@@ -487,7 +513,7 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero__grid">
           <div class="hero__content">
-            <h1 class="hero__title" id="hero-title">Elegant software, built with care.</h1>
+            <h1 class="hero__title" id="hero-title"><span class="hero__title-line">Elegant software</span><span class="hero__title-line">Built with care</span></h1>
             <p class="hero__text">Programming is what I love doing every day. It is a privilege to build secure, high-quality Ruby on Rails applications that feel reliable, thoughtful, and enjoyable to use.</p>
             <div class="hero__actions">
               <a class="button button--primary" href="#contact">Let’s connect</a>
