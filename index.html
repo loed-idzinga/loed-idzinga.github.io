@@ -12,52 +12,80 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #f8f7f4;
-      --surface: #ffffff;
-      --surface-soft: #f5f2ea;
-      --surface-alt: #fbf8f1;
-      --text: #171717;
-      --muted: #66645e;
-      --border: #e7e1d6;
-      --border-strong: #dbd3c6;
-      --accent: #1f6b4f;
-      --accent-strong: #174f3b;
-      --accent-soft: rgba(31, 107, 79, 0.12);
-      --tag-current-bg: rgba(31, 107, 79, 0.14);
-      --tag-current-text: #174f3b;
-      --tag-founder-bg: rgba(181, 87, 87, 0.12);
-      --tag-founder-text: #a14b4b;
-      --tag-previous-bg: rgba(122, 118, 110, 0.12);
-      --tag-previous-text: #6f6a63;
-      --tag-default-bg: rgba(31, 107, 79, 0.12);
-      --tag-default-text: #174f3b;
-      --shadow: 0 22px 60px rgba(23, 23, 23, 0.06);
+      --color-bg: #f8f7f4;
+      --color-surface: #ffffff;
+      --color-surface-soft: #f5f2ea;
+      --color-surface-alt: #fbf8f1;
+      --color-text: #171717;
+      --color-muted: #66645e;
+      --color-border: #e7e1d6;
+      --color-border-strong: #dbd3c6;
+      --color-accent: #1f6b4f;
+      --color-accent-strong: #174f3b;
+      --color-accent-soft: rgba(31, 107, 79, 0.12);
+      --color-tag-current-bg: rgba(31, 107, 79, 0.14);
+      --color-tag-current-text: #174f3b;
+      --color-tag-founder-bg: rgba(181, 87, 87, 0.12);
+      --color-tag-founder-text: #a14b4b;
+      --color-tag-previous-bg: rgba(122, 118, 110, 0.12);
+      --color-tag-previous-text: #6f6a63;
       --shadow-soft: 0 10px 28px rgba(23, 23, 23, 0.04);
-      --radius-xl: 30px;
+      --shadow-card: 0 22px 60px rgba(23, 23, 23, 0.06);
       --radius-lg: 24px;
-      --max-width: 1160px;
-      --section-space: 5.75rem;
+      --radius-xl: 30px;
+      --container-width: 1160px;
+      --section-spacing: 5.75rem;
       --grid-gap: 1.25rem;
+      --card-padding: 1.6rem;
+      --pill-radius: 999px;
+      --transition-default: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.96), transparent 32%),
-        linear-gradient(180deg, #fcfbf8 0%, var(--bg) 100%);
-      color: var(--text);
       line-height: 1.6;
+      color: var(--color-text);
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.96), transparent 32%),
+        linear-gradient(180deg, #fcfbf8 0%, var(--color-bg) 100%);
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    .page-shell {
-      width: min(calc(100% - 2rem), var(--max-width));
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Manrope", "Inter", sans-serif;
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .layout {
+      width: min(calc(100% - 2rem), var(--container-width));
       margin: 0 auto;
     }
 
@@ -70,7 +98,7 @@
       border-bottom: 1px solid rgba(231, 225, 214, 0.8);
     }
 
-    .nav {
+    .site-nav {
       display: grid;
       grid-template-columns: auto 1fr;
       align-items: center;
@@ -78,299 +106,292 @@
       padding: 1rem 0;
     }
 
-    .brand {
+    .site-brand {
       font-weight: 700;
       letter-spacing: -0.03em;
     }
 
-    .nav-links {
+    .site-nav__links {
       display: flex;
       justify-content: flex-end;
       gap: 1rem;
       flex-wrap: wrap;
-      color: var(--muted);
       font-size: 0.95rem;
+      color: var(--color-muted);
     }
 
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--text);
+    .site-nav__links a:hover,
+    .site-nav__links a:focus-visible {
+      color: var(--color-text);
+    }
+
+    .page-main section {
+      padding-bottom: var(--section-spacing);
     }
 
     .hero {
-      padding: 6rem 0 var(--section-space);
+      padding-top: 6rem;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 6.2fr) minmax(320px, 3.8fr);
-      gap: 3.5rem;
-      align-items: center;
-    }
-
-    .mini-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.55rem 0.95rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.88);
-      color: var(--accent-strong);
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    h1, h2, h3 {
-      font-family: "Manrope", "Inter", sans-serif;
-      letter-spacing: -0.04em;
-      margin: 0;
-      line-height: 1.02;
-    }
-
-    h1 {
-      font-size: clamp(3.6rem, 7vw, 5.9rem);
-      max-width: 8ch;
-    }
-
-    .hero-copy p,
-    .section-intro,
-    .card p,
-    .contact-note,
-    footer {
-      color: var(--muted);
-    }
-
-    .hero-copy {
-      display: grid;
-      align-content: center;
-    }
-
-    .hero-copy p {
-      max-width: 34ch;
-      font-size: 1.08rem;
-      margin: 1.25rem 0 0;
-    }
-
-    .hero-actions,
-    .contact-actions,
-    .hero-pills {
-      display: flex;
-      gap: 0.9rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-actions { margin-top: 2rem; }
-    .hero-pills { margin-top: 1.5rem; }
-
-    .button,
-    .button-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.95rem 1.3rem;
-      border-radius: 999px;
-      font-weight: 600;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-    }
-
-    .button {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 12px 28px rgba(31, 107, 79, 0.18);
-    }
-
-    .button:hover {
-      background: var(--accent-strong);
-      box-shadow: 0 16px 32px rgba(31, 107, 79, 0.22);
-    }
-
-    .button-secondary {
-      border: 1px solid var(--border-strong);
-      background: rgba(255, 255, 255, 0.88);
-    }
-
-    .button-secondary:hover,
-    .card:hover,
-    .contact-panel:hover {
-      transform: translateY(-2px);
-    }
-
-    .hero-card,
-    .card,
-    .contact-panel {
-      background: rgba(255, 255, 255, 0.86);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-soft);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .hero-card {
-      border-radius: var(--radius-xl);
-      padding: 1rem;
-      width: 100%;
-      max-width: 360px;
-      justify-self: end;
-      box-shadow: var(--shadow);
-      background: linear-gradient(180deg, #ffffff 0%, #f8f5ee 100%);
-    }
-
-    .hero-photo {
-      border-radius: 22px;
-      overflow: hidden;
-      aspect-ratio: 4 / 5;
-      background: linear-gradient(180deg, #ece6db 0%, #f8f6f0 100%);
-    }
-
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    main section {
-      padding: 0 0 var(--section-space);
-    }
-
-    .section-label {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--accent-strong);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 0.85rem;
-      display: inline-block;
-    }
-
-    .section-heading {
-      font-size: clamp(2.2rem, 4vw, 3.1rem);
-      margin-bottom: 0.95rem;
-    }
-
-    .section-intro {
-      max-width: 52ch;
-      margin: 0 0 1.8rem;
-    }
-
-    .contact-panel,
-    .card {
-      border-radius: var(--radius-lg);
-      padding: 1.6rem;
-    }
-
-    .expertise-grid,
-    .company-grid,
-    .interest-grid,
-    .contact-grid {
+    .hero__grid,
+    .section-grid--two,
+    .section-grid--four,
+    .contact__grid {
       display: grid;
       gap: var(--grid-gap);
       align-items: stretch;
     }
 
-    .expertise-grid,
-    .company-grid {
+    .hero__grid {
+      grid-template-columns: minmax(0, 6.2fr) minmax(320px, 3.8fr);
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .section-grid--two {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .interest-grid {
+    .section-grid--four {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
-    .contact-grid {
+    .contact__grid {
       grid-template-columns: minmax(0, 1fr) auto;
-      align-items: center;
       gap: 2rem;
+      align-items: center;
     }
 
-    .card-kicker {
+    .hero__content {
+      display: grid;
+      align-content: center;
+    }
+
+    .hero__title {
+      max-width: 8ch;
+      font-size: clamp(3.6rem, 7vw, 5.9rem);
+    }
+
+    .hero__text,
+    .section__intro,
+    .card__text,
+    .contact__text,
+    .site-footer {
+      color: var(--color-muted);
+    }
+
+    .hero__text {
+      max-width: 34ch;
+      margin-top: 1.25rem;
+      font-size: 1.08rem;
+    }
+
+    .hero__actions,
+    .hero__meta,
+    .contact__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .hero__actions {
+      margin-top: 2rem;
+    }
+
+    .hero__meta {
+      margin-top: 1.5rem;
+    }
+
+    .button {
       display: inline-flex;
-      align-self: start;
-      justify-self: start;
-      width: auto;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.3rem;
+      border: 1px solid transparent;
+      border-radius: var(--pill-radius);
+      font-weight: 600;
+      transition: var(--transition-default);
+    }
+
+    .button--primary {
+      color: #ffffff;
+      background: var(--color-accent);
+      box-shadow: 0 12px 28px rgba(31, 107, 79, 0.18);
+    }
+
+    .button--primary:hover {
+      background: var(--color-accent-strong);
+      box-shadow: 0 16px 32px rgba(31, 107, 79, 0.22);
+    }
+
+    .button--secondary {
+      background: rgba(255, 255, 255, 0.88);
+      border-color: var(--color-border-strong);
+    }
+
+    .button--secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .pill,
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: fit-content;
       max-width: max-content;
+      white-space: nowrap;
+      border-radius: var(--pill-radius);
+      font-weight: 600;
+    }
+
+    .pill {
+      gap: 0.5rem;
+      padding: 0.55rem 0.95rem;
+      border: 1px solid var(--color-border);
+      background: rgba(255, 255, 255, 0.88);
+      color: var(--color-accent-strong);
+      font-size: 0.9rem;
+    }
+
+    .tag {
       margin-bottom: 0.85rem;
       padding: 0.35rem 0.7rem;
-      border-radius: 999px;
       font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      white-space: nowrap;
     }
 
-    .tag-current {
-      background: var(--tag-current-bg);
-      color: var(--tag-current-text);
+    .tag--default {
+      color: var(--color-accent-strong);
+      background: var(--color-accent-soft);
     }
 
-    .tag-founder {
-      background: var(--tag-founder-bg);
-      color: var(--tag-founder-text);
+    .tag--current {
+      color: var(--color-tag-current-text);
+      background: var(--color-tag-current-bg);
     }
 
-    .tag-previous {
-      background: var(--tag-previous-bg);
-      color: var(--tag-previous-text);
+    .tag--founder {
+      color: var(--color-tag-founder-text);
+      background: var(--color-tag-founder-bg);
     }
 
-    .tag-default {
-      background: var(--tag-default-bg);
-      color: var(--tag-default-text);
+    .tag--previous {
+      color: var(--color-tag-previous-text);
+      background: var(--color-tag-previous-bg);
+    }
+
+    .hero-card,
+    .card,
+    .contact-panel {
+      border: 1px solid var(--color-border);
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition-default);
+    }
+
+    .hero-card {
+      width: 100%;
+      max-width: 360px;
+      padding: 1rem;
+      justify-self: end;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, #ffffff 0%, #f8f5ee 100%);
+      box-shadow: var(--shadow-card);
+    }
+
+    .hero-card__media {
+      overflow: hidden;
+      border-radius: 22px;
+      aspect-ratio: 4 / 5;
+      background: linear-gradient(180deg, #ece6db 0%, #f8f6f0 100%);
+    }
+
+    .hero-card__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .section__eyebrow {
+      display: inline-block;
+      margin-bottom: 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent-strong);
+    }
+
+    .section__title {
+      margin-bottom: 0.95rem;
+      font-size: clamp(2.2rem, 4vw, 3.1rem);
+    }
+
+    .section__intro {
+      max-width: 52ch;
+      margin-bottom: 1.8rem;
+    }
+
+    .card,
+    .contact-panel {
+      height: 100%;
+      padding: var(--card-padding);
+      border-radius: var(--radius-lg);
     }
 
     .card {
-      height: 100%;
       display: grid;
       grid-auto-rows: min-content;
       align-content: start;
-    }
-
-    .card h3 {
-      margin-bottom: 0.35rem;
-    }
-
-    .experience-card,
-    .expertise-card,
-    .interest-card {
       background: linear-gradient(180deg, #ffffff 0%, #fcfbf8 100%);
     }
 
-    .experience-card,
-    .expertise-card {
+    .card:hover,
+    .contact-panel:hover {
+      transform: translateY(-2px);
+    }
+
+    .card__title {
+      margin-bottom: 0.35rem;
+    }
+
+    .card--experience,
+    .card--expertise {
       min-height: 220px;
     }
 
-    .interest-card {
+    .card--interest {
       min-height: 170px;
       align-content: end;
       justify-content: start;
     }
 
     .contact-panel {
-      background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(248,244,236,0.98));
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 244, 236, 0.98));
     }
 
-    .contact-note {
+    .contact__text {
       max-width: 30ch;
-      margin: 0;
     }
 
-    footer {
-      padding: 0 0 3rem;
+    .site-footer {
+      padding-bottom: 3rem;
       font-size: 0.95rem;
     }
 
     @media (max-width: 980px) {
-      .hero-grid,
-      .expertise-grid,
-      .company-grid,
-      .interest-grid,
-      .contact-grid,
-      .nav {
+      .site-nav,
+      .hero__grid,
+      .section-grid--two,
+      .section-grid--four,
+      .contact__grid {
         grid-template-columns: 1fr;
       }
 
-      .nav-links {
+      .site-nav__links {
         justify-content: flex-start;
       }
 
@@ -383,17 +404,17 @@
         max-width: 300px;
       }
 
-      h1 {
+      .hero__title {
         max-width: 100%;
       }
     }
 
     @media (max-width: 640px) {
-      .page-shell {
-        width: min(calc(100% - 1.25rem), var(--max-width));
+      .layout {
+        width: min(calc(100% - 1.25rem), var(--container-width));
       }
 
-      main section {
+      .page-main section {
         padding-bottom: 4rem;
       }
 
@@ -405,9 +426,9 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="page-shell nav">
-      <a class="brand" href="#top">Loed Idzinga</a>
-      <nav class="nav-links" aria-label="Primary navigation">
+    <div class="layout site-nav">
+      <a class="site-brand" href="#top">Loed Idzinga</a>
+      <nav class="site-nav__links" aria-label="Primary navigation">
         <a href="#expertise">Expertise</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
@@ -415,112 +436,120 @@
     </div>
   </header>
 
-  <div class="page-shell">
-    <main id="top">
+  <div class="layout">
+    <main class="page-main" id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <h1 id="hero-title">Elegant software, built with care.</h1>
-            <p>I build Ruby on Rails applications that feel reliable, refined, and thoughtfully made.</p>
-            <div class="hero-actions">
-              <a class="button" href="#contact">Let’s connect</a>
-              <a class="button-secondary" href="#experience">View experience</a>
+        <div class="hero__grid">
+          <div class="hero__content">
+            <h1 class="hero__title" id="hero-title">Elegant software, built with care.</h1>
+            <p class="hero__text">I build Ruby on Rails applications that feel reliable, refined, and thoughtfully made.</p>
+            <div class="hero__actions">
+              <a class="button button--primary" href="#contact">Let’s connect</a>
+              <a class="button button--secondary" href="#experience">View experience</a>
             </div>
-            <div class="hero-pills" aria-label="Key topics">
-              <span class="mini-pill">Winterswijk</span>
-              <span class="mini-pill">Ruby on Rails</span>
-              <span class="mini-pill">Cybersecurity</span>
+            <div class="hero__meta" aria-label="Key topics">
+              <span class="pill">Winterswijk</span>
+              <span class="pill">Ruby on Rails</span>
+              <span class="pill">Cybersecurity</span>
             </div>
           </div>
 
           <div class="hero-card">
-            <div class="hero-photo">
-              <img src="images/profile.webp" alt="Portrait of Loed Idzinga" width="640" height="800" loading="eager" />
+            <div class="hero-card__media">
+              <img class="hero-card__image" src="images/profile.webp" alt="Portrait of Loed Idzinga" width="640" height="800" loading="eager" />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="expertise" aria-labelledby="expertise-title">
-        <span class="section-label">Expertise</span>
-        <h2 class="section-heading" id="expertise-title">Clear thinking, calm execution, and work with character.</h2>
-        <p class="section-intro">I enjoy building digital products that are secure, maintainable, and enjoyable to use — with attention to both technical quality and human experience. My work often sits at the intersection of product thinking, clean Rails development, thoughtful architecture, and dependable delivery.</p>
-        <div class="expertise-grid">
-          <article class="card expertise-card">
-            <span class="card-kicker tag-default">01</span>
-            <h3>Ruby on Rails</h3>
-            <p>Structured applications that remain clean, steady, and easy to grow.</p>
+      <section class="section" id="expertise" aria-labelledby="expertise-title">
+        <span class="section__eyebrow">Expertise</span>
+        <h2 class="section__title" id="expertise-title">Clear thinking, calm execution, and work with character.</h2>
+        <p class="section__intro">I enjoy building digital products that are secure, maintainable, and enjoyable to use — with attention to both technical quality and human experience. My work often sits at the intersection of product thinking, clean Rails development, thoughtful architecture, and dependable delivery.</p>
+        <div class="section-grid--two">
+          <article class="card card--expertise">
+            <span class="tag tag--default">01</span>
+            <h3 class="card__title">Ruby on Rails</h3>
+            <p class="card__text">Structured applications that remain clean, steady, and easy to grow.</p>
           </article>
-          <article class="card expertise-card">
-            <span class="card-kicker tag-default">02</span>
-            <h3>Cybersecurity</h3>
-            <p>Security considered early, implemented carefully, and kept practical.</p>
+          <article class="card card--expertise">
+            <span class="tag tag--default">02</span>
+            <h3 class="card__title">Cybersecurity</h3>
+            <p class="card__text">Security considered early, implemented carefully, and kept practical.</p>
           </article>
-          <article class="card expertise-card">
-            <span class="card-kicker tag-default">03</span>
-            <h3>Architecture & Systems</h3>
-            <p>Reliable systems shaped with clarity, good structure, and long-term maintainability in mind.</p>
+          <article class="card card--expertise">
+            <span class="tag tag--default">03</span>
+            <h3 class="card__title">Architecture &amp; Systems</h3>
+            <p class="card__text">Reliable systems shaped with clarity, good structure, and long-term maintainability in mind.</p>
           </article>
-          <article class="card expertise-card">
-            <span class="card-kicker tag-default">04</span>
-            <h3>Product Engineering</h3>
-            <p>Thoughtful choices that support quality, clarity, and steady forward momentum.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="experience" aria-labelledby="experience-title">
-        <span class="section-label">Experience</span>
-        <h2 class="section-heading" id="experience-title">Selected work.</h2>
-        <p class="section-intro">A few teams and products I’ve had the pleasure of contributing to.</p>
-        <div class="company-grid">
-          <article class="card experience-card">
-            <span class="card-kicker tag-current">Current</span>
-            <h3>Booking Experts</h3>
-            <p>Ruby Developer</p>
-          </article>
-          <article class="card experience-card">
-            <span class="card-kicker tag-founder">Founder</span>
-            <h3>SEQT</h3>
-            <p>Cybersecurity</p>
-          </article>
-          <article class="card experience-card">
-            <span class="card-kicker tag-previous">Previous</span>
-            <h3>Kamera Express</h3>
-            <p>Ruby Developer</p>
-          </article>
-          <article class="card experience-card">
-            <span class="card-kicker tag-previous">Previous</span>
-            <h3>Nedap Healthcare</h3>
-            <p>Software Engineering</p>
+          <article class="card card--expertise">
+            <span class="tag tag--default">04</span>
+            <h3 class="card__title">Product Engineering</h3>
+            <p class="card__text">Thoughtful choices that support quality, clarity, and steady forward momentum.</p>
           </article>
         </div>
       </section>
 
-      <section id="interests" aria-labelledby="interests-title">
-        <span class="section-label">Beyond work</span>
-        <h2 class="section-heading" id="interests-title">A few things that keep me inspired.</h2>
-        <div class="interest-grid">
-          <article class="card interest-card"><h3>Motorcycling</h3></article>
-          <article class="card interest-card"><h3>Diving</h3></article>
-          <article class="card interest-card"><h3>Fire fighting</h3></article>
-          <article class="card interest-card"><h3>Karate</h3></article>
+      <section class="section" id="experience" aria-labelledby="experience-title">
+        <span class="section__eyebrow">Experience</span>
+        <h2 class="section__title" id="experience-title">Selected work.</h2>
+        <p class="section__intro">A few teams and products I’ve had the pleasure of contributing to.</p>
+        <div class="section-grid--two">
+          <article class="card card--experience">
+            <span class="tag tag--current">Current</span>
+            <h3 class="card__title">Booking Experts</h3>
+            <p class="card__text">Ruby Developer</p>
+          </article>
+          <article class="card card--experience">
+            <span class="tag tag--founder">Founder</span>
+            <h3 class="card__title">SEQT</h3>
+            <p class="card__text">Cybersecurity</p>
+          </article>
+          <article class="card card--experience">
+            <span class="tag tag--previous">Previous</span>
+            <h3 class="card__title">Kamera Express</h3>
+            <p class="card__text">Ruby Developer</p>
+          </article>
+          <article class="card card--experience">
+            <span class="tag tag--previous">Previous</span>
+            <h3 class="card__title">Nedap Healthcare</h3>
+            <p class="card__text">Software Engineering</p>
+          </article>
         </div>
       </section>
 
-      <section id="contact" aria-labelledby="contact-title">
+      <section class="section" id="interests" aria-labelledby="interests-title">
+        <span class="section__eyebrow">Beyond work</span>
+        <h2 class="section__title" id="interests-title">A few things that keep me inspired.</h2>
+        <div class="section-grid--four">
+          <article class="card card--interest">
+            <h3 class="card__title">Motorcycling</h3>
+          </article>
+          <article class="card card--interest">
+            <h3 class="card__title">Diving</h3>
+          </article>
+          <article class="card card--interest">
+            <h3 class="card__title">Fire fighting</h3>
+          </article>
+          <article class="card card--interest">
+            <h3 class="card__title">Karate</h3>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contact-title">
         <div class="contact-panel">
-          <span class="section-label">Contact</span>
-          <div class="contact-grid">
+          <span class="section__eyebrow">Contact</span>
+          <div class="contact__grid">
             <div>
-              <h2 class="section-heading" id="contact-title">Let’s build something meaningful.</h2>
-              <p class="contact-note">Have a project, an idea, or a good conversation in mind? I’d be happy to hear from you.</p>
+              <h2 class="section__title" id="contact-title">Let’s build something meaningful.</h2>
+              <p class="contact__text">Have a project, an idea, or a good conversation in mind? I’d be happy to hear from you.</p>
             </div>
             <div>
-              <div class="contact-actions">
-                <a class="button" href="mailto:blobs.04.photic@icloud.com?subject=Hi!%20Let%27s%20connect">Email me</a>
-                <a class="button-secondary" href="https://www.linkedin.com/in/loedidzinga/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a class="button-secondary" href="https://github.com/loed-idzinga" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <div class="contact__actions">
+                <a class="button button--primary" href="mailto:blobs.04.photic@icloud.com?subject=Hi!%20Let%27s%20connect">Email me</a>
+                <a class="button button--secondary" href="https://www.linkedin.com/in/loedidzinga/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a class="button button--secondary" href="https://github.com/loed-idzinga" target="_blank" rel="noopener noreferrer">GitHub</a>
               </div>
             </div>
           </div>
@@ -528,7 +557,7 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
       <p>Created by Loed Idzinga — 2026</p>
     </footer>
   </div>
