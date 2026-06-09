@@ -56,29 +56,34 @@
       --accent: #1f6b4f;
       --accent-strong: #174f3b;
       --accent-soft: rgba(31, 107, 79, 0.12);
-      --tag-current-bg: rgba(31, 107, 79, 0.14);
-      --tag-current-text: #174f3b;
-      --tag-founder-bg: rgba(181, 87, 87, 0.12);
-      --tag-founder-text: #a14b4b;
-      --tag-previous-bg: rgba(122, 118, 110, 0.12);
-      --tag-previous-text: #6f6a63;
-      --shadow-soft: 0 10px 28px rgba(23, 23, 23, 0.04);
-      --shadow-strong: 0 22px 60px rgba(23, 23, 23, 0.06);
-      --radius: 24px;
-      --radius-large: 30px;
-      --max-width: 1160px;
+      --current-bg: rgba(31, 107, 79, 0.14);
+      --current-text: #174f3b;
+      --founder-bg: rgba(181, 87, 87, 0.12);
+      --founder-text: #a14b4b;
+      --previous-bg: rgba(122, 118, 110, 0.12);
+      --previous-text: #6f6a63;
+      --shadow: 0 0.625rem 1.75rem rgba(23, 23, 23, 0.04);
+      --shadow-strong: 0 1.375rem 3.75rem rgba(23, 23, 23, 0.06);
+      --radius: 1.5rem;
+      --radius-large: 1.875rem;
+      --max: 72.5rem;
+      --space-1: 1rem;
+      --space-2: 1.5rem;
+      --space-3: 2rem;
+      --space-4: 3rem;
+      --space-5: 4rem;
+      --space-6: 5rem;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: "Inter", system-ui, sans-serif;
+      font: 1rem/1.6 "Inter", system-ui, sans-serif;
       color: var(--text);
       background:
         radial-gradient(circle at top left, rgba(255, 255, 255, 0.96), transparent 32%),
         linear-gradient(180deg, #fcfbf8 0%, var(--bg) 100%);
-      line-height: 1.6;
     }
 
     h1, h2, h3, p { margin: 0; }
@@ -92,7 +97,7 @@
     img { display: block; max-width: 100%; }
 
     .container {
-      width: min(calc(100% - 2rem), var(--max-width));
+      width: min(calc(100% - 2rem), var(--max));
       margin: 0 auto;
     }
 
@@ -101,25 +106,32 @@
       top: 0;
       z-index: 10;
       background: rgba(248, 247, 244, 0.82);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(231, 225, 214, 0.8);
+      backdrop-filter: blur(0.875rem);
+      border-bottom: 0.0625rem solid rgba(231, 225, 214, 0.8);
     }
 
     .nav,
     .hero,
-    .grid-2,
-    .grid-4,
-    .contact-layout,
+    .cards,
+    .interests,
+    .contact,
     .actions,
     .meta {
+      gap: var(--space-1);
+    }
+
+    .nav,
+    .hero,
+    .cards,
+    .interests,
+    .contact {
       display: grid;
-      gap: 1rem;
     }
 
     .nav {
       grid-template-columns: auto 1fr;
       align-items: center;
-      padding: 1rem 0;
+      padding: var(--space-1) 0;
     }
 
     .brand {
@@ -127,11 +139,16 @@
       letter-spacing: -0.03em;
     }
 
-    .nav-links {
+    .nav-links,
+    .actions,
+    .meta {
       display: flex;
-      justify-content: flex-end;
       flex-wrap: wrap;
-      gap: 1rem;
+    }
+
+    .nav-links {
+      justify-content: flex-end;
+      gap: var(--space-1);
       color: var(--muted);
       font-size: 0.95rem;
     }
@@ -139,49 +156,45 @@
     .nav-links a:hover,
     .nav-links a:focus-visible { color: var(--text); }
 
-    main section { padding-bottom: 5rem; }
+    main section { padding-bottom: var(--space-6); }
 
     .hero {
-      grid-template-columns: minmax(0, 1.7fr) minmax(280px, 1fr);
+      grid-template-columns: minmax(0, 1.7fr) minmax(17.5rem, 1fr);
       align-items: center;
-      gap: 3rem;
-      padding: 5rem 0;
+      gap: var(--space-4);
+      padding: var(--space-6) 0;
     }
 
-    .hero-title {
+    .hero h1 {
       max-width: 10ch;
       font-size: clamp(3.8rem, 8vw, 6.2rem);
       line-height: 0.94;
       letter-spacing: -0.055em;
     }
 
-    .hero-title span { display: block; }
+    .hero h1 span { display: block; }
 
-    .hero-text,
-    .section-intro,
-    .card-text,
-    .contact-text,
-    .footer {
+    .hero p,
+    .intro,
+    .card p,
+    .contact p,
+    footer {
       color: var(--muted);
     }
 
-    .hero-text,
-    .section-intro,
-    .contact-text {
+    .hero p,
+    .intro,
+    .contact p {
       max-width: 42ch;
       font-size: 1.05rem;
       color: var(--muted-strong);
     }
 
-    .actions,
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-    }
+    .actions { margin-top: var(--space-3); }
+    .meta { margin-top: var(--space-2); }
 
-    .actions { margin-top: 2rem; }
-    .meta { margin-top: 1.5rem; }
+    .actions,
+    .meta { gap: 0.9rem; }
 
     .button,
     .pill,
@@ -189,39 +202,39 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 999px;
+      border-radius: 999rem;
     }
 
     .button {
       padding: 0.95rem 1.3rem;
-      border: 1px solid transparent;
+      border: 0.0625rem solid transparent;
       font-weight: 600;
       transition: 0.2s ease;
     }
 
-    .button-primary {
+    .primary {
       color: #fff;
       background: var(--accent);
-      box-shadow: 0 12px 28px rgba(31, 107, 79, 0.18);
+      box-shadow: 0 0.75rem 1.75rem rgba(31, 107, 79, 0.18);
     }
 
-    .button-primary:hover {
+    .primary:hover {
       background: var(--accent-strong);
-      box-shadow: 0 16px 32px rgba(31, 107, 79, 0.22);
+      box-shadow: 0 1rem 2rem rgba(31, 107, 79, 0.22);
     }
 
-    .button-secondary {
+    .secondary {
       background: rgba(255, 255, 255, 0.88);
       border-color: var(--border-strong);
     }
 
-    .button-secondary:hover,
+    .secondary:hover,
     .card:hover,
-    .panel:hover { transform: translateY(-2px); }
+    .panel:hover { transform: translateY(-0.125rem); }
 
     .pill {
       padding: 0.55rem 0.95rem;
-      border: 1px solid var(--border);
+      border: 0.0625rem solid var(--border);
       background: rgba(255, 255, 255, 0.88);
       color: var(--accent-strong);
       font-size: 0.9rem;
@@ -240,43 +253,43 @@
       white-space: nowrap;
     }
 
-    .tag-default { color: var(--accent-strong); background: var(--accent-soft); }
-    .tag-current { color: var(--tag-current-text); background: var(--tag-current-bg); }
-    .tag-founder { color: var(--tag-founder-text); background: var(--tag-founder-bg); }
-    .tag-previous { color: var(--tag-previous-text); background: var(--tag-previous-bg); }
+    .tag.default { color: var(--accent-strong); background: var(--accent-soft); }
+    .tag.current { color: var(--current-text); background: var(--current-bg); }
+    .tag.founder { color: var(--founder-text); background: var(--founder-bg); }
+    .tag.previous { color: var(--previous-text); background: var(--previous-bg); }
 
     .hero-card,
     .card,
     .panel {
-      border: 1px solid var(--border);
+      border: 0.0625rem solid var(--border);
       background: var(--surface);
-      box-shadow: var(--shadow-soft);
+      box-shadow: var(--shadow);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .hero-card {
-      max-width: 380px;
-      padding: 1rem;
+      max-width: 23.75rem;
+      padding: var(--space-1);
       justify-self: end;
       border-radius: var(--radius-large);
       background: linear-gradient(180deg, #ffffff 0%, #f8f5ee 100%);
       box-shadow: var(--shadow-strong);
     }
 
-    .hero-image-wrap {
+    .hero-card div {
       overflow: hidden;
-      border-radius: 22px;
+      border-radius: 1.375rem;
       aspect-ratio: 4 / 5;
       background: linear-gradient(180deg, #ece6db 0%, #f8f6f0 100%);
     }
 
-    .hero-image {
+    .hero-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .section-label {
+    .label {
       display: inline-block;
       margin-bottom: 0.85rem;
       color: var(--accent-strong);
@@ -286,22 +299,18 @@
       text-transform: uppercase;
     }
 
-    .section-title {
+    h2 {
       max-width: 16ch;
-      margin-bottom: 1rem;
+      margin-bottom: var(--space-1);
       font-size: clamp(2.2rem, 4vw, 3.1rem);
       text-wrap: balance;
     }
 
-    .section-intro { margin-bottom: 2rem; }
+    .intro { margin-bottom: var(--space-3); }
 
-    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .contact-layout {
-      grid-template-columns: minmax(0, 1.15fr) minmax(260px, auto);
-      align-items: start;
-      gap: 2rem;
-    }
+    .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .interests { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .contact { grid-template-columns: minmax(0, 1.15fr) minmax(16.25rem, auto); gap: var(--space-3); align-items: start; }
 
     .card,
     .panel {
@@ -314,19 +323,19 @@
       display: grid;
       align-content: start;
       background: linear-gradient(180deg, #ffffff 0%, #fcfbf8 100%);
+      min-height: 14.25rem;
     }
 
-    .card-title {
+    .card h3 {
       margin-bottom: 0.45rem;
       font-size: 1.45rem;
       line-height: 1.05;
     }
 
-    .card-text { font-size: 0.98rem; }
-    .card-tall { min-height: 228px; }
+    .card p { font-size: 0.98rem; }
 
-    .interest-card {
-      min-height: 240px;
+    .interest {
+      min-height: 15rem;
       position: relative;
       overflow: hidden;
       background-position: center;
@@ -335,64 +344,56 @@
       align-content: end;
     }
 
-    .interest-card::before {
+    .interest::before {
       content: "";
       position: absolute;
       inset: 0;
       background: linear-gradient(180deg, rgba(23, 23, 23, 0.04) 0%, rgba(23, 23, 23, 0.5) 100%);
     }
 
-    .interest-card .card-title {
+    .interest h3 {
       position: relative;
       z-index: 1;
       margin-bottom: 0;
       color: #fff;
     }
 
-    .interest-motorcycling { background-image: url('images/motor.webp'); }
-    .interest-diving { background-image: url('images/diving.webp'); }
-    .interest-fire-fighting { background-image: url('images/fire_fighting.webp'); }
-    .interest-karate { background-image: url('images/karate.webp'); }
+    .motor { background-image: url('images/motor.webp'); }
+    .diving { background-image: url('images/diving.webp'); }
+    .fire { background-image: url('images/fire_fighting.webp'); }
+    .karate { background-image: url('images/karate.webp'); }
 
     .panel {
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 244, 236, 0.98));
     }
 
-    .contact-text {
-      width: 100%;
-      max-width: none;
-    }
-
-    .footer {
-      padding-bottom: 3rem;
+    footer {
+      padding-bottom: var(--space-4);
       text-align: center;
       font-size: 0.95rem;
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 61.25rem) {
       .nav,
       .hero,
-      .grid-2,
-      .grid-4,
-      .contact-layout {
+      .cards,
+      .interests,
+      .contact {
         grid-template-columns: 1fr;
       }
 
       .nav-links { justify-content: flex-start; }
-      .hero { gap: 2rem; padding-top: 4rem; }
-      .hero-card { justify-self: start; max-width: 320px; }
-      .hero-title,
-      .section-title { max-width: 100%; }
+      .hero { gap: var(--space-3); padding-top: var(--space-5); }
+      .hero-card { justify-self: start; max-width: 20rem; }
+      .hero h1,
+      h2 { max-width: 100%; }
     }
 
-    @media (max-width: 640px) {
-      .container {
-        width: min(calc(100% - 1.25rem), var(--max-width));
-      }
-
-      main section { padding-bottom: 4rem; }
-      .hero { padding-top: 3rem; }
-      .hero-title { font-size: clamp(3.2rem, 12vw, 4.6rem); }
+    @media (max-width: 40rem) {
+      .container { width: min(calc(100% - 1.25rem), var(--max)); }
+      main section { padding-bottom: var(--space-5); }
+      .hero { padding-top: var(--space-4); }
+      .hero h1 { font-size: clamp(3.2rem, 12vw, 4.6rem); }
     }
   </style>
 </head>
@@ -410,15 +411,12 @@
 
   <main class="container" id="top">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <h1 class="hero-title" id="hero-title">
-          <span>Elegant software</span>
-          <span>Built with care</span>
-        </h1>
+      <div>
+        <h1 id="hero-title"><span>Elegant software</span><span>Built with care</span></h1>
         <p class="hero-text">Programming is what I love doing every day. It is a privilege to build secure, high-quality Ruby on Rails applications that feel reliable, thoughtful, and enjoyable to use.</p>
         <div class="actions">
-          <a class="button button-primary" href="#contact">Let’s connect</a>
-          <a class="button button-secondary" href="#experience">View experience</a>
+          <a class="button primary" href="#contact">Let’s connect</a>
+          <a class="button secondary" href="#experience">View experience</a>
         </div>
         <div class="meta" aria-label="Key topics">
           <span class="pill">Winterswijk</span>
@@ -428,108 +426,98 @@
       </div>
 
       <div class="hero-card">
-        <div class="hero-image-wrap">
-          <img class="hero-image" src="images/profile.webp" alt="Portrait of Loed Idzinga" width="640" height="800" loading="eager" />
+        <div>
+          <img src="images/profile.webp" alt="Portrait of Loed Idzinga" width="640" height="800" loading="eager" />
         </div>
       </div>
     </section>
 
     <section id="expertise" aria-labelledby="expertise-title">
-      <span class="section-label">Expertise</span>
-      <h2 class="section-title" id="expertise-title">Clear thinking, calm execution, and work with character.</h2>
-      <p class="section-intro">I enjoy creating digital products that are secure, maintainable, and genuinely pleasant to use. My work often sits at the intersection of thoughtful product engineering, clean Rails development, practical security, and architecture that helps teams move forward with confidence.</p>
-      <div class="grid-2">
-        <article class="card card-tall">
-          <span class="tag tag-default">01</span>
-          <h3 class="card-title">Ruby on Rails</h3>
-          <p class="card-text">Structured applications that stay clean, approachable, and enjoyable to develop over time.</p>
+      <span class="label">Expertise</span>
+      <h2 id="expertise-title">Clear thinking, calm execution, and work with character.</h2>
+      <p class="intro">I enjoy creating digital products that are secure, maintainable, and genuinely pleasant to use. My work often sits at the intersection of thoughtful product engineering, clean Rails development, practical security, and architecture that helps teams move forward with confidence.</p>
+      <div class="cards">
+        <article class="card">
+          <span class="tag default">01</span>
+          <h3>Ruby on Rails</h3>
+          <p>Structured applications that stay clean, approachable, and enjoyable to develop over time.</p>
         </article>
-        <article class="card card-tall">
-          <span class="tag tag-default">02</span>
-          <h3 class="card-title">Cybersecurity</h3>
-          <p class="card-text">Security considered early, communicated clearly, and implemented in a way that stays practical.</p>
+        <article class="card">
+          <span class="tag default">02</span>
+          <h3>Cybersecurity</h3>
+          <p>Security considered early, communicated clearly, and implemented in a way that stays practical.</p>
         </article>
-        <article class="card card-tall">
-          <span class="tag tag-default">03</span>
-          <h3 class="card-title">Architecture &amp; Systems</h3>
-          <p class="card-text">Reliable systems designed with clarity, strong foundations, and long-term maintainability in mind.</p>
+        <article class="card">
+          <span class="tag default">03</span>
+          <h3>Architecture &amp; Systems</h3>
+          <p>Reliable systems designed with clarity, strong foundations, and long-term maintainability in mind.</p>
         </article>
-        <article class="card card-tall">
-          <span class="tag tag-default">04</span>
-          <h3 class="card-title">Product Engineering</h3>
-          <p class="card-text">Thoughtful choices that support quality, momentum, and a better experience for both teams and users.</p>
+        <article class="card">
+          <span class="tag default">04</span>
+          <h3>Product Engineering</h3>
+          <p>Thoughtful choices that support quality, momentum, and a better experience for both teams and users.</p>
         </article>
       </div>
     </section>
 
     <section id="experience" aria-labelledby="experience-title">
-      <span class="section-label">Experience</span>
-      <h2 class="section-title" id="experience-title">Selected work.</h2>
-      <p class="section-intro">A few companies, products, and ideas I’ve had the pleasure of building for.</p>
-      <div class="grid-2">
-        <article class="card card-tall">
-          <span class="tag tag-current">Current</span>
-          <h3 class="card-title">Booking Experts</h3>
-          <p class="card-text">Working as a Ruby developer on software that helps create better holiday experiences.</p>
+      <span class="label">Experience</span>
+      <h2 id="experience-title">Selected work.</h2>
+      <p class="intro">A few companies, products, and ideas I’ve had the pleasure of building for.</p>
+      <div class="cards">
+        <article class="card">
+          <span class="tag current">Current</span>
+          <h3>Booking Experts</h3>
+          <p>Working as a Ruby developer on software that helps create better holiday experiences.</p>
         </article>
-        <article class="card card-tall">
-          <span class="tag tag-founder">Founder</span>
-          <h3 class="card-title">SEQT</h3>
-          <p class="card-text">Building cybersecurity ideas with a focus on awareness, clarity, and practical protection.</p>
+        <article class="card">
+          <span class="tag founder">Founder</span>
+          <h3>SEQT</h3>
+          <p>Building cybersecurity ideas with a focus on awareness, clarity, and practical protection.</p>
         </article>
-        <article class="card card-tall">
-          <span class="tag tag-previous">Previous</span>
-          <h3 class="card-title">Kamera Express</h3>
-          <p class="card-text">Worked as a Ruby developer on improving rental flows and digital customer experiences.</p>
+        <article class="card">
+          <span class="tag previous">Previous</span>
+          <h3>Kamera Express</h3>
+          <p>Worked as a Ruby developer on improving rental flows and digital customer experiences.</p>
         </article>
-        <article class="card card-tall">
-          <span class="tag tag-previous">Previous</span>
-          <h3 class="card-title">Nedap Healthcare</h3>
-          <p class="card-text">Contributed to software in healthcare, where reliability and clarity truly matter.</p>
+        <article class="card">
+          <span class="tag previous">Previous</span>
+          <h3>Nedap Healthcare</h3>
+          <p>Contributed to software in healthcare, where reliability and clarity truly matter.</p>
         </article>
       </div>
     </section>
 
     <section id="interests" aria-labelledby="interests-title">
-      <span class="section-label">Beyond work</span>
-      <h2 class="section-title" id="interests-title">A few things that keep me inspired.</h2>
-      <div class="grid-4">
-        <article class="card interest-card interest-motorcycling">
-          <h3 class="card-title">Motorcycling</h3>
-        </article>
-        <article class="card interest-card interest-diving">
-          <h3 class="card-title">Diving</h3>
-        </article>
-        <article class="card interest-card interest-fire-fighting">
-          <h3 class="card-title">Fire fighting</h3>
-        </article>
-        <article class="card interest-card interest-karate">
-          <h3 class="card-title">Karate</h3>
-        </article>
+      <span class="label">Beyond work</span>
+      <h2 id="interests-title">A few things that keep me inspired.</h2>
+      <div class="interests">
+        <article class="card interest motor"><h3>Motorcycling</h3></article>
+        <article class="card interest diving"><h3>Diving</h3></article>
+        <article class="card interest fire"><h3>Fire fighting</h3></article>
+        <article class="card interest karate"><h3>Karate</h3></article>
       </div>
     </section>
 
     <section id="contact" aria-labelledby="contact-title">
       <div class="panel">
-        <span class="section-label">Contact</span>
-        <div class="contact-layout">
+        <span class="label">Contact</span>
+        <div class="contact">
           <div>
-            <h2 class="section-title" id="contact-title">Let’s build something meaningful.</h2>
-            <p class="contact-text">Whether you have a project in mind, want to collaborate, or simply feel like saying hello, I’d love to hear from you. You can reach me by email, or connect with me on LinkedIn and GitHub.</p>
+            <h2 id="contact-title">Let’s build something meaningful.</h2>
+            <p>Whether you have a project in mind, want to collaborate, or simply feel like saying hello, I’d love to hear from you. You can reach me by email, or connect with me on LinkedIn and GitHub.</p>
           </div>
-          <div>
-            <div class="actions">
-              <a class="button button-primary" href="mailto:blobs.04.photic@icloud.com?subject=Hi!%20Let%27s%20connect">Email me</a>
-              <a class="button button-secondary" href="https://www.linkedin.com/in/loedidzinga/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a class="button button-secondary" href="https://github.com/loed-idzinga" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </div>
+          <div class="actions">
+            <a class="button primary" href="mailto:blobs.04.photic@icloud.com?subject=Hi!%20Let%27s%20connect">Email me</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/loedidzinga/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="button secondary" href="https://github.com/loed-idzinga" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="container footer">
+  <footer class="container">
     <p>Created by Loed Idzinga — 2026</p>
   </footer>
 </body>
