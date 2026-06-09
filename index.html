@@ -6,7 +6,7 @@
   <title>Loed Idzinga | Ruby Developer & Cybersecurity Enthusiast</title>
   <meta name="description" content="Loed Idzinga is a Ruby developer in the Netherlands building secure, elegant web applications with Ruby on Rails and a thoughtful product mindset." />
   <meta name="author" content="Loed Idzinga" />
-  <meta name="theme-color" content="#f8f7f4" />
+  <meta name="theme-color" content="#fff8f3" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://www.loedidzinga.nl/" />
   <link rel="icon" href="/favicon.ico" />
@@ -46,28 +46,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #f8f7f4;
-      --surface: #fff;
-      --text: #171717;
-      --muted: #56524c;
-      --border: #e7e1d6;
-      --line: rgba(231, 225, 214, 0.8);
-      --accent: #1f6b4f;
-      --accent-strong: #174f3b;
-      --accent-soft: rgba(31, 107, 79, 0.12);
-      --current-bg: rgba(31, 107, 79, 0.14);
-      --current-text: #174f3b;
-      --founder-bg: rgba(181, 87, 87, 0.12);
-      --founder-text: #a14b4b;
-      --previous-bg: rgba(122, 118, 110, 0.12);
-      --previous-text: #6f6a63;
-      --shadow: 0 0.625rem 1.75rem rgba(23, 23, 23, 0.04);
+      --bg: #fff8f3;
+      --surface: #ffffff;
+      --surface-soft: #fff2fb;
+      --surface-warm: #fff9e8;
+      --text: #2b2340;
+      --muted: #6f6882;
+      --border: #f0dff0;
+      --line: rgba(240, 223, 240, 0.95);
+      --accent: #7c5cff;
+      --accent-strong: #6246ea;
+      --accent-soft: rgba(124, 92, 255, 0.14);
+      --current-bg: rgba(80, 200, 160, 0.18);
+      --current-text: #1f7a5f;
+      --founder-bg: rgba(255, 143, 163, 0.2);
+      --founder-text: #bf4f75;
+      --previous-bg: rgba(255, 196, 92, 0.2);
+      --previous-text: #9a6a11;
+      --shadow: 0 0.75rem 2rem rgba(124, 92, 255, 0.08);
       --radius: 1.5rem;
       --radius-lg: 1.875rem;
       --max: 72rem;
       --gap: 1rem;
       --gap-lg: 2rem;
-      --space: 6rem;
+      --space: 5rem;
     }
 
     * { box-sizing: border-box; }
@@ -76,7 +78,10 @@
       margin: 0;
       font: 1rem/1.6 "Inter", system-ui, sans-serif;
       color: var(--text);
-      background: linear-gradient(180deg, #fcfbf8 0%, var(--bg) 100%);
+      background:
+        radial-gradient(circle at top left, #ffffff 0%, rgba(255, 255, 255, 0) 28%),
+        radial-gradient(circle at top right, rgba(255, 221, 244, 0.7) 0%, rgba(255, 221, 244, 0) 26%),
+        linear-gradient(180deg, #fffdfb 0%, var(--bg) 100%);
     }
 
     h1, h2, h3, p { margin: 0; }
@@ -98,8 +103,9 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(248, 247, 244, 0.9);
+      background: rgba(255, 248, 243, 0.88);
       border-bottom: 0.0625rem solid var(--line);
+      backdrop-filter: blur(0.75rem);
     }
 
     .nav,
@@ -118,6 +124,7 @@
 
     .brand {
       font-weight: 700;
+      letter-spacing: -0.03em;
     }
 
     .links,
@@ -133,6 +140,11 @@
       font-size: 0.95rem;
     }
 
+    .links a:hover,
+    .links a:focus-visible {
+      color: var(--accent-strong);
+    }
+
     main section { padding-bottom: var(--space); }
 
     .hero {
@@ -143,7 +155,9 @@
     }
 
     .hero h1 {
-      font-size: 5rem;
+      font-size: clamp(3.8rem, 8vw, 6rem);
+      line-height: 0.94;
+      letter-spacing: -0.055em;
     }
 
     .hero h1 span { display: block; }
@@ -154,6 +168,13 @@
     .contact p,
     footer {
       color: var(--muted);
+    }
+
+    .hero p,
+    .intro,
+    .contact p {
+      font-size: 1.05rem;
+      max-width: 42ch;
     }
 
     .row { margin-top: 1.5rem; }
@@ -175,14 +196,24 @@
 
     .primary {
       color: #fff;
-      background: var(--accent);
+      background: linear-gradient(135deg, var(--accent) 0%, #ff7eb6 100%);
+      box-shadow: 0 0.75rem 1.75rem rgba(124, 92, 255, 0.2);
     }
 
-    .primary:hover { background: var(--accent-strong); }
+    .primary:hover {
+      background: linear-gradient(135deg, var(--accent-strong) 0%, #ff5ea8 100%);
+      transform: translateY(-0.125rem);
+    }
 
     .secondary {
-      background: var(--surface);
+      background: rgba(255, 255, 255, 0.78);
       border-color: var(--border);
+      color: var(--text);
+    }
+
+    .secondary:hover {
+      background: var(--surface-soft);
+      transform: translateY(-0.125rem);
     }
 
     .tag {
@@ -205,7 +236,7 @@
     .card,
     .panel {
       border: 0.0625rem solid var(--border);
-      background: var(--surface);
+      background: rgba(255, 255, 255, 0.82);
       box-shadow: var(--shadow);
       border-radius: var(--radius);
     }
@@ -213,13 +244,14 @@
     .hero-card {
       padding: 1rem;
       border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, #ffffff 0%, #fff4fb 100%);
     }
 
     .hero-card div {
       overflow: hidden;
       border-radius: calc(var(--radius) - 0.125rem);
       aspect-ratio: 4 / 5;
-      background: #f1ece3;
+      background: linear-gradient(180deg, #ffe7f4 0%, #fff8df 100%);
     }
 
     .hero-card img {
@@ -240,7 +272,7 @@
 
     h2 {
       margin-bottom: 1rem;
-      font-size: 3rem;
+      font-size: clamp(2.2rem, 4vw, 3rem);
       text-wrap: balance;
     }
 
@@ -269,6 +301,7 @@
       display: grid;
       align-content: start;
       min-height: 14rem;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 248, 252, 0.96) 100%);
     }
 
     .card h3 {
@@ -276,6 +309,8 @@
       font-size: 1.45rem;
       line-height: 1.05;
     }
+
+    .card p { font-size: 0.98rem; }
 
     .interest {
       min-height: 15rem;
@@ -291,7 +326,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(23, 23, 23, 0) 0%, rgba(23, 23, 23, 0.45) 100%);
+      background: linear-gradient(180deg, rgba(124, 92, 255, 0) 0%, rgba(72, 41, 133, 0.45) 100%);
     }
 
     .interest h3 {
@@ -306,9 +341,14 @@
     .fire { background-image: url('images/fire_fighting.webp'); }
     .karate { background-image: url('images/karate.webp'); }
 
+    .panel {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 244, 250, 0.95) 100%);
+    }
+
     footer {
       padding-bottom: 3rem;
       text-align: center;
+      font-size: 0.95rem;
     }
 
     @media (max-width: 61.25rem) {
@@ -321,6 +361,13 @@
       }
 
       .links { justify-content: flex-start; }
+    }
+
+    @media (max-width: 40rem) {
+      .wrap { width: min(calc(100% - 1.25rem), var(--max)); }
+      main section { padding-bottom: 4rem; }
+      .hero { padding-top: 4rem; }
+      .hero h1 { font-size: clamp(3.2rem, 12vw, 4.6rem); }
     }
   </style>
 </head>
@@ -422,14 +469,18 @@
     </section>
 
     <section id="contact" aria-labelledby="contact-title">
-      <span class="label">Contact</span>
-      <h2 id="contact-title">Let’s build something meaningful.</h2>
-      <div class="contact">
-        <div class="row">
+      <div class="panel">
+        <span class="label">Contact</span>
+        <div class="contact">
+          <div>
+            <h2 id="contact-title">Let’s build something meaningful.</h2>
             <p>If you have a project, an idea, or simply want to say hello, I’d be glad to hear from you. Feel free to reach out by email, or connect with me on LinkedIn and GitHub.</p>
-          <a class="button primary" href="mailto:blobs.04.photic@icloud.com?subject=Hi!%20Let%27s%20connect">Email me</a>
-          <a class="button secondary" href="https://www.linkedin.com/in/loedidzinga/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a class="button secondary" href="https://github.com/loed-idzinga" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+          <div class="row">
+            <a class="button primary" href="mailto:blobs.04.photic@icloud.com?subject=Hi!%20Let%27s%20connect">Email me</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/loedidzinga/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="button secondary" href="https://github.com/loed-idzinga" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
         </div>
       </div>
     </section>
