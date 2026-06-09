@@ -6,7 +6,7 @@
   <title>Loed Idzinga | Ruby Developer & Cybersecurity Enthusiast</title>
   <meta name="description" content="Loed Idzinga is a Ruby developer in the Netherlands building secure, elegant web applications with Ruby on Rails and a thoughtful product mindset." />
   <meta name="author" content="Loed Idzinga" />
-  <meta name="theme-color" content="#fff8f3" />
+  <meta name="theme-color" content="#f7f8ff" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://www.loedidzinga.nl/" />
   <link rel="icon" href="/favicon.ico" />
@@ -46,24 +46,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #fff8f3;
+      --bg: #f7f8ff;
       --surface: #ffffff;
-      --surface-soft: #fff2fb;
-      --surface-warm: #fff9e8;
-      --text: #2b2340;
-      --muted: #6f6882;
-      --border: #f0dff0;
-      --line: rgba(240, 223, 240, 0.95);
-      --accent: #7c5cff;
-      --accent-strong: #6246ea;
-      --accent-soft: rgba(124, 92, 255, 0.14);
-      --current-bg: rgba(80, 200, 160, 0.18);
-      --current-text: #1f7a5f;
-      --founder-bg: rgba(255, 143, 163, 0.2);
-      --founder-text: #bf4f75;
-      --previous-bg: rgba(255, 196, 92, 0.2);
-      --previous-text: #9a6a11;
-      --shadow: 0 0.75rem 2rem rgba(124, 92, 255, 0.08);
+      --surface-soft: #f4f7ff;
+      --surface-warm: #eefaf6;
+      --text: #1f2940;
+      --muted: #66708a;
+      --border: #dfe7f5;
+      --line: rgba(223, 231, 245, 0.92);
+      --accent: #2563eb;
+      --accent-strong: #1d4ed8;
+      --accent-soft: rgba(37, 99, 235, 0.12);
+      --current-bg: rgba(48, 176, 120, 0.16);
+      --current-text: #1d7a52;
+      --founder-bg: rgba(111, 76, 255, 0.14);
+      --founder-text: #5a3fd6;
+      --previous-bg: rgba(34, 197, 94, 0.14);
+      --previous-text: #18794e;
+      --shadow: 0 0.75rem 2rem rgba(37, 99, 235, 0.08);
       --radius: 1.5rem;
       --radius-lg: 1.875rem;
       --max: 72rem;
@@ -79,9 +79,9 @@
       font: 1rem/1.6 "Inter", system-ui, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, #ffffff 0%, rgba(255, 255, 255, 0) 28%),
-        radial-gradient(circle at top right, rgba(255, 221, 244, 0.7) 0%, rgba(255, 221, 244, 0) 26%),
-        linear-gradient(180deg, #fffdfb 0%, var(--bg) 100%);
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 28%),
+        radial-gradient(circle at top right, rgba(196, 221, 255, 0.55) 0%, rgba(196, 221, 255, 0) 24%),
+        linear-gradient(180deg, #fbfdff 0%, var(--bg) 100%);
     }
 
     h1, h2, h3, p { margin: 0; }
@@ -103,7 +103,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(255, 248, 243, 0.88);
+      background: rgba(247, 248, 255, 0.88);
       border-bottom: 0.0625rem solid var(--line);
       backdrop-filter: blur(0.75rem);
     }
@@ -196,17 +196,17 @@
 
     .primary {
       color: #fff;
-      background: linear-gradient(135deg, var(--accent) 0%, #ff7eb6 100%);
-      box-shadow: 0 0.75rem 1.75rem rgba(124, 92, 255, 0.2);
+      background: var(--accent);
+      box-shadow: 0 0.75rem 1.75rem rgba(37, 99, 235, 0.18);
     }
 
     .primary:hover {
-      background: linear-gradient(135deg, var(--accent-strong) 0%, #ff5ea8 100%);
+      background: var(--accent-strong);
       transform: translateY(-0.125rem);
     }
 
     .secondary {
-      background: rgba(255, 255, 255, 0.78);
+      background: rgba(255, 255, 255, 0.82);
       border-color: var(--border);
       color: var(--text);
     }
@@ -236,7 +236,7 @@
     .card,
     .panel {
       border: 0.0625rem solid var(--border);
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.84);
       box-shadow: var(--shadow);
       border-radius: var(--radius);
     }
@@ -244,14 +244,14 @@
     .hero-card {
       padding: 1rem;
       border-radius: var(--radius-lg);
-      background: linear-gradient(180deg, #ffffff 0%, #fff4fb 100%);
+      background: linear-gradient(180deg, #ffffff 0%, #f3f7ff 100%);
     }
 
     .hero-card div {
       overflow: hidden;
       border-radius: calc(var(--radius) - 0.125rem);
       aspect-ratio: 4 / 5;
-      background: linear-gradient(180deg, #ffe7f4 0%, #fff8df 100%);
+      background: linear-gradient(180deg, #edf4ff 0%, #eefaf6 100%);
     }
 
     .hero-card img {
@@ -301,7 +301,7 @@
       display: grid;
       align-content: start;
       min-height: 14rem;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 248, 252, 0.96) 100%);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(244, 247, 255, 0.98) 100%);
     }
 
     .card h3 {
@@ -326,7 +326,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(124, 92, 255, 0) 0%, rgba(72, 41, 133, 0.45) 100%);
+      background: linear-gradient(180deg, rgba(37, 99, 235, 0) 0%, rgba(23, 37, 84, 0.4) 100%);
     }
 
     .interest h3 {
@@ -342,7 +342,7 @@
     .karate { background-image: url('images/karate.webp'); }
 
     .panel {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 244, 250, 0.95) 100%);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(243, 247, 255, 0.96) 100%);
     }
 
     footer {
