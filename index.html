@@ -67,7 +67,7 @@
       --max: 72rem;
       --gap: 1rem;
       --gap-lg: 2rem;
-      --space: 5rem;
+      --space: 6rem;
     }
 
     * { box-sizing: border-box; }
@@ -118,7 +118,6 @@
 
     .brand {
       font-weight: 700;
-      letter-spacing: -0.03em;
     }
 
     .links,
@@ -144,9 +143,7 @@
     }
 
     .hero h1 {
-      font-size: clamp(3.8rem, 8vw, 6rem);
-      line-height: 0.94;
-      letter-spacing: -0.055em;
+      font-size: 5rem;
     }
 
     .hero h1 span { display: block; }
@@ -157,13 +154,6 @@
     .contact p,
     footer {
       color: var(--muted);
-    }
-
-    .hero p,
-    .intro,
-    .contact p {
-      font-size: 1.05rem;
-      max-width: 42ch;
     }
 
     .row { margin-top: 1.5rem; }
@@ -250,7 +240,7 @@
 
     h2 {
       margin-bottom: 1rem;
-      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-size: 3rem;
       text-wrap: balance;
     }
 
@@ -287,8 +277,6 @@
       line-height: 1.05;
     }
 
-    .card p { font-size: 0.98rem; }
-
     .interest {
       min-height: 15rem;
       position: relative;
@@ -321,7 +309,6 @@
     footer {
       padding-bottom: 3rem;
       text-align: center;
-      font-size: 0.95rem;
     }
 
     @media (max-width: 61.25rem) {
@@ -334,13 +321,6 @@
       }
 
       .links { justify-content: flex-start; }
-    }
-
-    @media (max-width: 40rem) {
-      .wrap { width: min(calc(100% - 1.25rem), var(--max)); }
-      main section { padding-bottom: 4rem; }
-      .hero { padding-top: 4rem; }
-      .hero h1 { font-size: clamp(3.2rem, 12vw, 4.6rem); }
     }
   </style>
 </head>
@@ -442,18 +422,14 @@
     </section>
 
     <section id="contact" aria-labelledby="contact-title">
-      <div class="panel">
-        <span class="label">Contact</span>
-        <div class="contact">
-          <div>
-            <h2 id="contact-title">Let’s build something meaningful.</h2>
+      <span class="label">Contact</span>
+      <h2 id="contact-title">Let’s build something meaningful.</h2>
+      <div class="contact">
+        <div class="row">
             <p>If you have a project, an idea, or simply want to say hello, I’d be glad to hear from you. Feel free to reach out by email, or connect with me on LinkedIn and GitHub.</p>
-          </div>
-          <div class="row">
-            <a class="button primary" href="mailto:blobs.04.photic@icloud.com?subject=Hi!%20Let%27s%20connect">Email me</a>
-            <a class="button secondary" href="https://www.linkedin.com/in/loedidzinga/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a class="button secondary" href="https://github.com/loed-idzinga" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </div>
+          <a class="button primary" href="mailto:blobs.04.photic@icloud.com?subject=Hi!%20Let%27s%20connect">Email me</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/loedidzinga/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="button secondary" href="https://github.com/loed-idzinga" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </div>
     </section>
