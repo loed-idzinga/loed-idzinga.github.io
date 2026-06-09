@@ -47,12 +47,11 @@
   <style>
     :root {
       --bg: #f8f7f4;
-      --surface: rgba(255, 255, 255, 0.88);
+      --surface: #fff;
       --text: #171717;
-      --muted: #66645e;
-      --muted-strong: #56524c;
+      --muted: #56524c;
       --border: #e7e1d6;
-      --border-strong: #dbd3c6;
+      --line: rgba(231, 225, 214, 0.8);
       --accent: #1f6b4f;
       --accent-strong: #174f3b;
       --accent-soft: rgba(31, 107, 79, 0.12);
@@ -63,16 +62,12 @@
       --previous-bg: rgba(122, 118, 110, 0.12);
       --previous-text: #6f6a63;
       --shadow: 0 0.625rem 1.75rem rgba(23, 23, 23, 0.04);
-      --shadow-strong: 0 1.375rem 3.75rem rgba(23, 23, 23, 0.06);
       --radius: 1.5rem;
-      --radius-large: 1.875rem;
-      --max: 72.5rem;
-      --space-1: 1rem;
-      --space-2: 1.5rem;
-      --space-3: 2rem;
-      --space-4: 3rem;
-      --space-5: 4rem;
-      --space-6: 5rem;
+      --radius-lg: 1.875rem;
+      --max: 72rem;
+      --gap: 1rem;
+      --gap-lg: 2rem;
+      --space: 5rem;
     }
 
     * { box-sizing: border-box; }
@@ -81,9 +76,7 @@
       margin: 0;
       font: 1rem/1.6 "Inter", system-ui, sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(255, 255, 255, 0.96), transparent 32%),
-        linear-gradient(180deg, #fcfbf8 0%, var(--bg) 100%);
+      background: linear-gradient(180deg, #fcfbf8 0%, var(--bg) 100%);
     }
 
     h1, h2, h3, p { margin: 0; }
@@ -96,7 +89,7 @@
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
 
-    .container {
+    .wrap {
       width: min(calc(100% - 2rem), var(--max));
       margin: 0 auto;
     }
@@ -105,33 +98,22 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(248, 247, 244, 0.82);
-      backdrop-filter: blur(0.875rem);
-      border-bottom: 0.0625rem solid rgba(231, 225, 214, 0.8);
+      background: rgba(248, 247, 244, 0.9);
+      border-bottom: 0.0625rem solid var(--line);
     }
 
     .nav,
     .hero,
-    .cards,
-    .interests,
-    .contact,
-    .actions,
-    .meta {
-      gap: var(--space-1);
-    }
-
-    .nav,
-    .hero,
-    .cards,
-    .interests,
+    .grid,
     .contact {
       display: grid;
+      gap: var(--gap);
     }
 
     .nav {
       grid-template-columns: auto 1fr;
       align-items: center;
-      padding: var(--space-1) 0;
+      padding: 1rem 0;
     }
 
     .brand {
@@ -139,34 +121,30 @@
       letter-spacing: -0.03em;
     }
 
-    .nav-links,
-    .actions,
-    .meta {
+    .links,
+    .row {
       display: flex;
       flex-wrap: wrap;
+      gap: var(--gap);
     }
 
-    .nav-links {
+    .links {
       justify-content: flex-end;
-      gap: var(--space-1);
       color: var(--muted);
       font-size: 0.95rem;
     }
 
-    .nav-links a:hover,
-    .nav-links a:focus-visible { color: var(--text); }
-
-    main section { padding-bottom: var(--space-6); }
+    main section { padding-bottom: var(--space); }
 
     .hero {
-      grid-template-columns: minmax(0, 1.7fr) minmax(17.5rem, 1fr);
+      grid-template-columns: minmax(0, 1.7fr) minmax(18rem, 1fr);
       align-items: center;
-      gap: var(--space-4);
-      padding: var(--space-6) 0;
+      gap: var(--gap-lg);
+      padding: var(--space) 0;
     }
 
     .hero h1 {
-      font-size: clamp(3.8rem, 8vw, 6.2rem);
+      font-size: clamp(3.8rem, 8vw, 6rem);
       line-height: 0.94;
       letter-spacing: -0.055em;
     }
@@ -185,14 +163,10 @@
     .intro,
     .contact p {
       font-size: 1.05rem;
-      color: var(--muted-strong);
+      max-width: 42ch;
     }
 
-    .actions { margin-top: var(--space-3); }
-    .meta { margin-top: var(--space-2); }
-
-    .actions,
-    .meta { gap: 0.9rem; }
+    .row { margin-top: 1.5rem; }
 
     .button,
     .pill,
@@ -213,27 +187,19 @@
     .primary {
       color: #fff;
       background: var(--accent);
-      box-shadow: 0 0.75rem 1.75rem rgba(31, 107, 79, 0.18);
     }
 
-    .primary:hover {
-      background: var(--accent-strong);
-      box-shadow: 0 1rem 2rem rgba(31, 107, 79, 0.22);
-    }
+    .primary:hover { background: var(--accent-strong); }
 
     .secondary {
-      background: rgba(255, 255, 255, 0.88);
-      border-color: var(--border-strong);
+      background: var(--surface);
+      border-color: var(--border);
     }
-
-    .secondary:hover,
-    .card:hover,
-    .panel:hover { transform: translateY(-0.125rem); }
 
     .pill {
       padding: 0.55rem 0.95rem;
       border: 0.0625rem solid var(--border);
-      background: rgba(255, 255, 255, 0.88);
+      background: var(--surface);
       color: var(--accent-strong);
       font-size: 0.9rem;
       font-weight: 600;
@@ -251,10 +217,10 @@
       white-space: nowrap;
     }
 
-    .tag.default { color: var(--accent-strong); background: var(--accent-soft); }
-    .tag.current { color: var(--current-text); background: var(--current-bg); }
-    .tag.founder { color: var(--founder-text); background: var(--founder-bg); }
-    .tag.previous { color: var(--previous-text); background: var(--previous-bg); }
+    .default { color: var(--accent-strong); background: var(--accent-soft); }
+    .current { color: var(--current-text); background: var(--current-bg); }
+    .founder { color: var(--founder-text); background: var(--founder-bg); }
+    .previous { color: var(--previous-text); background: var(--previous-bg); }
 
     .hero-card,
     .card,
@@ -262,22 +228,19 @@
       border: 0.0625rem solid var(--border);
       background: var(--surface);
       box-shadow: var(--shadow);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border-radius: var(--radius);
     }
 
     .hero-card {
-      padding: var(--space-1);
-      justify-self: end;
-      border-radius: var(--radius-large);
-      background: linear-gradient(180deg, #ffffff 0%, #f8f5ee 100%);
-      box-shadow: var(--shadow-strong);
+      padding: 1rem;
+      border-radius: var(--radius-lg);
     }
 
     .hero-card div {
       overflow: hidden;
-      border-radius: 1.375rem;
+      border-radius: calc(var(--radius) - 0.125rem);
       aspect-ratio: 4 / 5;
-      background: linear-gradient(180deg, #ece6db 0%, #f8f6f0 100%);
+      background: #f1ece3;
     }
 
     .hero-card img {
@@ -297,29 +260,36 @@
     }
 
     h2 {
-      margin-bottom: var(--space-1);
-      font-size: clamp(2.2rem, 4vw, 3.1rem);
+      margin-bottom: 1rem;
+      font-size: clamp(2.2rem, 4vw, 3rem);
       text-wrap: balance;
     }
 
-    .intro { margin-bottom: var(--space-3); }
+    .intro { margin-bottom: var(--gap-lg); }
 
-    .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .interests { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .contact { grid-template-columns: minmax(0, 1.15fr) minmax(16.25rem, auto); gap: var(--space-3); align-items: start; }
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.interests {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .contact {
+      grid-template-columns: minmax(0, 1.15fr) minmax(16rem, auto);
+      gap: var(--gap-lg);
+      align-items: start;
+    }
 
     .card,
     .panel {
-      height: 100%;
-      padding: 1.6rem;
-      border-radius: var(--radius);
+      padding: 1.5rem;
     }
 
     .card {
       display: grid;
       align-content: start;
-      background: linear-gradient(180deg, #ffffff 0%, #fcfbf8 100%);
-      min-height: 14.25rem;
+      min-height: 14rem;
     }
 
     .card h3 {
@@ -344,7 +314,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(23, 23, 23, 0.04) 0%, rgba(23, 23, 23, 0.5) 100%);
+      background: linear-gradient(180deg, rgba(23, 23, 23, 0) 0%, rgba(23, 23, 23, 0.45) 100%);
     }
 
     .interest h3 {
@@ -359,22 +329,37 @@
     .fire { background-image: url('images/fire_fighting.webp'); }
     .karate { background-image: url('images/karate.webp'); }
 
-    .panel {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 244, 236, 0.98));
-    }
-
     footer {
-      padding-bottom: var(--space-4);
+      padding-bottom: 3rem;
       text-align: center;
       font-size: 0.95rem;
+    }
+
+    @media (max-width: 61.25rem) {
+      .nav,
+      .hero,
+      .grid,
+      .grid.interests,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .links { justify-content: flex-start; }
+    }
+
+    @media (max-width: 40rem) {
+      .wrap { width: min(calc(100% - 1.25rem), var(--max)); }
+      main section { padding-bottom: 4rem; }
+      .hero { padding-top: 4rem; }
+      .hero h1 { font-size: clamp(3.2rem, 12vw, 4.6rem); }
     }
   </style>
 </head>
 <body>
   <header class="header">
-    <div class="container nav">
+    <div class="wrap nav">
       <a class="brand" href="#top">Loed Idzinga</a>
-      <nav class="nav-links" aria-label="Primary navigation">
+      <nav class="links" aria-label="Primary navigation">
         <a href="#expertise">Expertise</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
@@ -382,16 +367,20 @@
     </div>
   </header>
 
-  <main class="container" id="top">
+  <main class="wrap" id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div>
         <h1 id="hero-title"><span>Elegant software</span><span>Built with care</span></h1>
-        <p class="hero-text">Programming is what I love doing every day. It is a privilege to build secure, high-quality Ruby on Rails applications that feel reliable, thoughtful, and enjoyable to use.</p>
-        <div class="actions">
+        <p>Programming is what I love doing every day. It is a privilege to build secure, high-quality Ruby on Rails applications that feel reliable, thoughtful, and enjoyable to use.</p>
+        <div class="row">
           <a class="button primary" href="#contact">Let’s connect</a>
           <a class="button secondary" href="#experience">View experience</a>
         </div>
-
+        <div class="row" aria-label="Key topics">
+          <span class="pill">Winterswijk</span>
+          <span class="pill">Ruby on Rails</span>
+          <span class="pill">Cybersecurity</span>
+        </div>
       </div>
 
       <div class="hero-card">
@@ -405,7 +394,7 @@
       <span class="label">Expertise</span>
       <h2 id="expertise-title">Clear thinking, calm execution, and work with character.</h2>
       <p class="intro">I enjoy creating digital products that are secure, maintainable, and genuinely pleasant to use. My work often sits at the intersection of thoughtful product engineering, clean Rails development, practical security, and architecture that helps teams move forward with confidence.</p>
-      <div class="cards">
+      <div class="grid">
         <article class="card">
           <span class="tag default">01</span>
           <h3>Ruby on Rails</h3>
@@ -433,7 +422,7 @@
       <span class="label">Experience</span>
       <h2 id="experience-title">Selected work.</h2>
       <p class="intro">A few companies, products, and ideas I’ve had the pleasure of building for.</p>
-      <div class="cards">
+      <div class="grid">
         <article class="card">
           <span class="tag current">Current</span>
           <h3>Booking Experts</h3>
@@ -460,7 +449,7 @@
     <section id="interests" aria-labelledby="interests-title">
       <span class="label">Beyond work</span>
       <h2 id="interests-title">A few things that keep me inspired.</h2>
-      <div class="interests">
+      <div class="grid interests">
         <article class="card interest motor"><h3>Motorcycling</h3></article>
         <article class="card interest diving"><h3>Diving</h3></article>
         <article class="card interest fire"><h3>Fire fighting</h3></article>
@@ -476,7 +465,7 @@
             <h2 id="contact-title">Let’s build something meaningful.</h2>
             <p>Whether you have a project in mind, want to collaborate, or simply feel like saying hello, I’d love to hear from you. You can reach me by email, or connect with me on LinkedIn and GitHub.</p>
           </div>
-          <div class="actions">
+          <div class="row">
             <a class="button primary" href="mailto:blobs.04.photic@icloud.com?subject=Hi!%20Let%27s%20connect">Email me</a>
             <a class="button secondary" href="https://www.linkedin.com/in/loedidzinga/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a class="button secondary" href="https://github.com/loed-idzinga" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -486,7 +475,7 @@
     </section>
   </main>
 
-  <footer class="container">
+  <footer class="wrap">
     <p>Created by Loed Idzinga — 2026</p>
   </footer>
 </body>
