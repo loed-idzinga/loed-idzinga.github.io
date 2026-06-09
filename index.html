@@ -2,43 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Loed Idzinga | Ruby Developer & Cybersecurity Enthusiast</title>
   <meta name="description" content="Loed Idzinga is an experienced Ruby developer and cybersecurity enthusiast building secure, elegant, high-quality web applications from Winterswijk, Gelderland." />
-  <meta name="keywords" content="Loed Idzinga, Ruby Developer, Ruby on Rails, Cybersecurity, Secure Web Applications, Product Engineering, Winterswijk, Gelderland, Netherlands" />
   <meta name="author" content="Loed Idzinga" />
   <meta name="theme-color" content="#f8f7f4" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="googlebot" content="index, follow" />
-  <meta name="language" content="English" />
-  <meta name="geo.region" content="NL-GE" />
-  <meta name="geo.placename" content="Winterswijk" />
-  <meta name="geo.position" content="51.9725;6.7194" />
-  <meta name="ICBM" content="51.9725, 6.7194" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://www.loedidzinga.nl/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="Loed Idzinga" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.loedidzinga.nl/" />
   <meta property="og:title" content="Loed Idzinga | Ruby Developer & Cybersecurity Enthusiast" />
   <meta property="og:description" content="Experienced Ruby developer and cybersecurity enthusiast focused on secure, high-quality web applications and thoughtful digital products." />
   <meta property="og:image" content="https://www.loedidzinga.nl/images/profile.webp" />
-  <meta property="og:site_name" content="Loed Idzinga" />
-  <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://www.loedidzinga.nl/" />
   <meta name="twitter:title" content="Loed Idzinga | Ruby Developer & Cybersecurity Enthusiast" />
   <meta name="twitter:description" content="Experienced Ruby developer and cybersecurity enthusiast focused on secure, high-quality web applications and thoughtful digital products." />
   <meta name="twitter:image" content="https://www.loedidzinga.nl/images/profile.webp" />
-  <meta name="format-detection" content="telephone=no" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -47,22 +29,9 @@
       "jobTitle": "Ruby Developer & Cybersecurity Enthusiast",
       "url": "https://www.loedidzinga.nl/",
       "image": "https://www.loedidzinga.nl/images/profile.webp",
-      "description": "Experienced Ruby developer and cybersecurity enthusiast focused on secure, high-quality web applications and thoughtful digital products.",
       "sameAs": [
         "https://www.linkedin.com/in/loedidzinga/",
         "https://github.com/loed-idzinga"
-      ],
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Booking Experts"
-      },
-      "knowsAbout": [
-        "Ruby",
-        "Ruby on Rails",
-        "Cybersecurity",
-        "Secure Coding",
-        "Product Engineering",
-        "Software Architecture"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -72,11 +41,13 @@
       }
     }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #f8f7f4;
       --surface: rgba(255, 255, 255, 0.88);
-      --surface-strong: #ffffff;
       --text: #171717;
       --muted: #66645e;
       --muted-strong: #56524c;
@@ -92,7 +63,7 @@
       --tag-previous-bg: rgba(122, 118, 110, 0.12);
       --tag-previous-text: #6f6a63;
       --shadow-soft: 0 10px 28px rgba(23, 23, 23, 0.04);
-      --shadow-card: 0 22px 60px rgba(23, 23, 23, 0.06);
+      --shadow-strong: 0 22px 60px rgba(23, 23, 23, 0.06);
       --radius: 24px;
       --radius-large: 30px;
       --max-width: 1160px;
@@ -102,7 +73,7 @@
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Inter", system-ui, sans-serif;
       color: var(--text);
       background:
         radial-gradient(circle at top left, rgba(255, 255, 255, 0.96), transparent 32%),
@@ -110,14 +81,15 @@
       line-height: 1.6;
     }
 
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
     h1, h2, h3, p { margin: 0; }
     h1, h2, h3 {
       font-family: "Manrope", "Inter", sans-serif;
       line-height: 1.02;
       letter-spacing: -0.04em;
     }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
 
     .container {
       width: min(calc(100% - 2rem), var(--max-width));
@@ -127,17 +99,26 @@
     .header {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 10;
       background: rgba(248, 247, 244, 0.82);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(231, 225, 214, 0.8);
     }
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .nav,
+    .hero,
+    .grid-2,
+    .grid-4,
+    .contact-layout,
+    .actions,
+    .meta {
+      display: grid;
       gap: 1rem;
+    }
+
+    .nav {
+      grid-template-columns: auto 1fr;
+      align-items: center;
       padding: 1rem 0;
     }
 
@@ -148,70 +129,33 @@
 
     .nav-links {
       display: flex;
-      flex-wrap: wrap;
       justify-content: flex-end;
+      flex-wrap: wrap;
       gap: 1rem;
       color: var(--muted);
       font-size: 0.95rem;
     }
 
     .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--text);
-    }
+    .nav-links a:focus-visible { color: var(--text); }
 
-    main section {
-      padding-bottom: 5.75rem;
-    }
+    main section { padding-bottom: 5rem; }
 
     .hero {
-      padding-top: 6rem;
-    }
-
-    .hero-layout,
-    .grid-two,
-    .grid-four,
-    .contact-layout {
-      display: grid;
-      gap: 1.25rem;
-    }
-
-    .hero-layout {
-      grid-template-columns: minmax(0, 6.4fr) minmax(300px, 3.6fr);
-      gap: 4rem;
+      grid-template-columns: minmax(0, 1.7fr) minmax(280px, 1fr);
       align-items: center;
-    }
-
-    .grid-two {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .grid-four {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .contact-layout {
-      grid-template-columns: minmax(0, 1.15fr) minmax(260px, auto);
-      gap: 2rem;
-      align-items: start;
-    }
-
-    .hero-copy {
-      display: grid;
-      align-content: center;
+      gap: 3rem;
+      padding: 5rem 0;
     }
 
     .hero-title {
       max-width: 10ch;
-      font-size: clamp(4rem, 8vw, 6.4rem);
+      font-size: clamp(3.8rem, 8vw, 6.2rem);
       line-height: 0.94;
       letter-spacing: -0.055em;
-      text-wrap: balance;
     }
 
-    .hero-title span {
-      display: block;
-    }
+    .hero-title span { display: block; }
 
     .hero-text,
     .section-intro,
@@ -221,23 +165,23 @@
       color: var(--muted);
     }
 
-    .hero-text {
+    .hero-text,
+    .section-intro,
+    .contact-text {
       max-width: 42ch;
-      margin-top: 1.5rem;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--muted-strong);
     }
 
-    .hero-actions,
-    .hero-meta,
-    .contact-actions {
+    .actions,
+    .meta {
       display: flex;
       flex-wrap: wrap;
       gap: 0.9rem;
     }
 
-    .hero-actions { margin-top: 2rem; }
-    .hero-meta { margin-top: 1.5rem; }
+    .actions { margin-top: 2rem; }
+    .meta { margin-top: 1.5rem; }
 
     .button,
     .pill,
@@ -252,7 +196,7 @@
       padding: 0.95rem 1.3rem;
       border: 1px solid transparent;
       font-weight: 600;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      transition: 0.2s ease;
     }
 
     .button-primary {
@@ -273,13 +217,9 @@
 
     .button-secondary:hover,
     .card:hover,
-    .panel:hover {
-      transform: translateY(-2px);
-    }
+    .panel:hover { transform: translateY(-2px); }
 
     .pill {
-      justify-content: flex-start;
-      gap: 0.5rem;
       padding: 0.55rem 0.95rem;
       border: 1px solid var(--border);
       background: rgba(255, 255, 255, 0.88);
@@ -290,7 +230,6 @@
     }
 
     .tag {
-      justify-content: flex-start;
       width: fit-content;
       margin-bottom: 0.85rem;
       padding: 0.35rem 0.7rem;
@@ -306,9 +245,9 @@
     .tag-founder { color: var(--tag-founder-text); background: var(--tag-founder-bg); }
     .tag-previous { color: var(--tag-previous-text); background: var(--tag-previous-bg); }
 
+    .hero-card,
     .card,
-    .panel,
-    .hero-card {
+    .panel {
       border: 1px solid var(--border);
       background: var(--surface);
       box-shadow: var(--shadow-soft);
@@ -320,8 +259,8 @@
       padding: 1rem;
       justify-self: end;
       border-radius: var(--radius-large);
-      background: linear-gradient(180deg, var(--color-surface, #ffffff) 0%, #f8f5ee 100%);
-      box-shadow: var(--shadow-card);
+      background: linear-gradient(180deg, #ffffff 0%, #f8f5ee 100%);
+      box-shadow: var(--shadow-strong);
     }
 
     .hero-image-wrap {
@@ -350,15 +289,18 @@
     .section-title {
       max-width: 16ch;
       margin-bottom: 1rem;
-      font-size: clamp(2.2rem, 4vw, 3.25rem);
+      font-size: clamp(2.2rem, 4vw, 3.1rem);
       text-wrap: balance;
     }
 
-    .section-intro {
-      width: 100%;
-      margin-bottom: 2rem;
-      font-size: 1.03rem;
-      color: var(--muted-strong);
+    .section-intro { margin-bottom: 2rem; }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .contact-layout {
+      grid-template-columns: minmax(0, 1.15fr) minmax(260px, auto);
+      align-items: start;
+      gap: 2rem;
     }
 
     .card,
@@ -371,22 +313,17 @@
     .card {
       display: grid;
       align-content: start;
-      background: linear-gradient(180deg, var(--surface-strong) 0%, #fcfbf8 100%);
+      background: linear-gradient(180deg, #ffffff 0%, #fcfbf8 100%);
     }
 
     .card-title {
       margin-bottom: 0.45rem;
-      font-size: 1.55rem;
-      line-height: 1.04;
+      font-size: 1.45rem;
+      line-height: 1.05;
     }
 
-    .card-text {
-      font-size: 0.98rem;
-    }
-
-    .card-tall {
-      min-height: 228px;
-    }
+    .card-text { font-size: 0.98rem; }
+    .card-tall { min-height: 228px; }
 
     .interest-card {
       min-height: 240px;
@@ -423,42 +360,29 @@
 
     .contact-text {
       width: 100%;
-      font-size: 1.03rem;
-      color: var(--muted-strong);
+      max-width: none;
     }
 
     .footer {
       padding-bottom: 3rem;
-      font-size: 0.95rem;
       text-align: center;
+      font-size: 0.95rem;
     }
 
     @media (max-width: 980px) {
-      .site-nav,
-      .hero-layout,
-      .grid-two,
-      .grid-four,
+      .nav,
+      .hero,
+      .grid-2,
+      .grid-4,
       .contact-layout {
         grid-template-columns: 1fr;
       }
 
-      .nav-links {
-        justify-content: flex-start;
-      }
-
-      .hero {
-        padding-top: 4rem;
-      }
-
-      .hero-card {
-        justify-self: start;
-        max-width: 320px;
-      }
-
+      .nav-links { justify-content: flex-start; }
+      .hero { gap: 2rem; padding-top: 4rem; }
+      .hero-card { justify-self: start; max-width: 320px; }
       .hero-title,
-      .section-title {
-        max-width: 100%;
-      }
+      .section-title { max-width: 100%; }
     }
 
     @media (max-width: 640px) {
@@ -466,17 +390,9 @@
         width: min(calc(100% - 1.25rem), var(--max-width));
       }
 
-      main section {
-        padding-bottom: 4rem;
-      }
-
-      .hero {
-        padding-top: 3rem;
-      }
-
-      .hero-title {
-        font-size: clamp(3.2rem, 12vw, 4.6rem);
-      }
+      main section { padding-bottom: 4rem; }
+      .hero { padding-top: 3rem; }
+      .hero-title { font-size: clamp(3.2rem, 12vw, 4.6rem); }
     }
   </style>
 </head>
@@ -494,28 +410,26 @@
 
   <main class="container" id="top">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-layout">
-        <div class="hero-copy">
-          <h1 class="hero-title" id="hero-title">
-            <span>Elegant software</span>
-            <span>Built with care</span>
-          </h1>
-          <p class="hero-text">Programming is what I love doing every day. It is a privilege to build secure, high-quality Ruby on Rails applications that feel reliable, thoughtful, and enjoyable to use.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#contact">Let’s connect</a>
-            <a class="button button-secondary" href="#experience">View experience</a>
-          </div>
-          <div class="hero-meta" aria-label="Key topics">
-            <span class="pill">Winterswijk</span>
-            <span class="pill">Ruby on Rails</span>
-            <span class="pill">Cybersecurity</span>
-          </div>
+      <div class="hero-copy">
+        <h1 class="hero-title" id="hero-title">
+          <span>Elegant software</span>
+          <span>Built with care</span>
+        </h1>
+        <p class="hero-text">Programming is what I love doing every day. It is a privilege to build secure, high-quality Ruby on Rails applications that feel reliable, thoughtful, and enjoyable to use.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#contact">Let’s connect</a>
+          <a class="button button-secondary" href="#experience">View experience</a>
         </div>
+        <div class="meta" aria-label="Key topics">
+          <span class="pill">Winterswijk</span>
+          <span class="pill">Ruby on Rails</span>
+          <span class="pill">Cybersecurity</span>
+        </div>
+      </div>
 
-        <div class="hero-card">
-          <div class="hero-image-wrap">
-            <img class="hero-image" src="images/profile.webp" alt="Portrait of Loed Idzinga" width="640" height="800" loading="eager" />
-          </div>
+      <div class="hero-card">
+        <div class="hero-image-wrap">
+          <img class="hero-image" src="images/profile.webp" alt="Portrait of Loed Idzinga" width="640" height="800" loading="eager" />
         </div>
       </div>
     </section>
@@ -524,7 +438,7 @@
       <span class="section-label">Expertise</span>
       <h2 class="section-title" id="expertise-title">Clear thinking, calm execution, and work with character.</h2>
       <p class="section-intro">I enjoy creating digital products that are secure, maintainable, and genuinely pleasant to use. My work often sits at the intersection of thoughtful product engineering, clean Rails development, practical security, and architecture that helps teams move forward with confidence.</p>
-      <div class="grid-two">
+      <div class="grid-2">
         <article class="card card-tall">
           <span class="tag tag-default">01</span>
           <h3 class="card-title">Ruby on Rails</h3>
@@ -552,7 +466,7 @@
       <span class="section-label">Experience</span>
       <h2 class="section-title" id="experience-title">Selected work.</h2>
       <p class="section-intro">A few companies, products, and ideas I’ve had the pleasure of building for.</p>
-      <div class="grid-two">
+      <div class="grid-2">
         <article class="card card-tall">
           <span class="tag tag-current">Current</span>
           <h3 class="card-title">Booking Experts</h3>
@@ -579,7 +493,7 @@
     <section id="interests" aria-labelledby="interests-title">
       <span class="section-label">Beyond work</span>
       <h2 class="section-title" id="interests-title">A few things that keep me inspired.</h2>
-      <div class="grid-four">
+      <div class="grid-4">
         <article class="card interest-card interest-motorcycling">
           <h3 class="card-title">Motorcycling</h3>
         </article>
@@ -604,7 +518,7 @@
             <p class="contact-text">Whether you have a project in mind, want to collaborate, or simply feel like saying hello, I’d love to hear from you. You can reach me by email, or connect with me on LinkedIn and GitHub.</p>
           </div>
           <div>
-            <div class="contact-actions">
+            <div class="actions">
               <a class="button button-primary" href="mailto:blobs.04.photic@icloud.com?subject=Hi!%20Let%27s%20connect">Email me</a>
               <a class="button button-secondary" href="https://www.linkedin.com/in/loedidzinga/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               <a class="button button-secondary" href="https://github.com/loed-idzinga" target="_blank" rel="noopener noreferrer">GitHub</a>
